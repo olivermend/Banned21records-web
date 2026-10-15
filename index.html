@@ -1,17 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#161615">
-  <meta name="description" content="Banned 21 Records. Independent music, loud songs and questionable decisions. Meet Something Numbers and their debut Too Old for This Shit...">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Banned 21 Records | Bad ideas. Loud music.">
-  <meta property="og:description" content="Independent music. Loud songs. Very real problems. Our first release: Something Numbers — Too Old for This Shit... Coming soon.">
-  <meta property="og:image" content="assets/album.webp">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <title>Banned 21 Records — Bad Ideas. Loud Music.</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#161615" name="theme-color"/>
+<meta content="Banned 21 Records. Independent music, loud songs and questionable decisions. Meet Something Numbers and their debut Too Old for This Shit..." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="Banned 21 Records | Bad ideas. Loud music." property="og:title"/>
+<meta content="Independent music. Loud songs. Very real problems. First release: Something Numbers - Too Old for This Shit... Coming soon." property="og:description"/>
+<meta content="assets/album.webp" property="og:image"/>
+<link href="assets/favicon.png" rel="icon" type="image/png"/>
+<title data-i18n="pageTitle">Banned 21 Records - Bad Ideas. Loud Music.</title>
+<style>
     :root { --dark:#141414; --ink:#161616; --paper:#f0ede3; --red:#e33029; --acid:#e5ee1f; --muted:#b8b3a8; --line:rgba(255,255,255,.17); }
     * { box-sizing:border-box }
     html { scroll-behavior:smooth }
@@ -156,108 +157,205 @@
       .footer-note { text-align:left }
     }
     @media(prefers-reduced-motion:reduce) { *,*:before,*:after { animation-duration:.001ms!important; transition-duration:.001ms!important; scroll-behavior:auto!important } }
-  </style>
+  
+
+/* Fixed image geometry. Preserve source aspect ratios on every viewport. */
+img { height:auto; }
+.release-cover { display:block; width:100%; height:auto; aspect-ratio:1/1; object-fit:contain; }
+.roster-photo { display:block; width:100%; height:auto; aspect-ratio:1400/933; object-fit:contain; object-position:center; }
+.more-image img { display:block; width:100%; height:auto; aspect-ratio:1300/867; object-fit:contain; }
+.hero-art img { height:auto; aspect-ratio:1/1; object-fit:contain; }
+.site-controls { display:flex; align-items:center; gap:24px; }
+.lang-switch { display:inline-flex; flex-shrink:0; gap:4px; align-items:center; border-left:1px solid #c6bfb5; padding-left:13px; }
+.lang-switch button { border:0; background:transparent; cursor:pointer; padding:10px 7px 8px; border-bottom:3px solid transparent; color:var(--ink); font:900 12px/1 'Courier New',monospace; letter-spacing:.02em; opacity:.6; min-height:38px; }
+.lang-switch button[aria-pressed="true"] { color:#b42120; border-bottom-color:#e33029; opacity:1; }
+.lang-switch button:hover { opacity:1; }
+.roster-story { max-width:820px; margin:31px 0 5px; }
+.roster-story .eyebrow { color:var(--acid); margin:0 0 12px; }
+.roster-story > p:not(.eyebrow) { margin:0; font-size:clamp(19px,2.15vw,27px); line-height:1.44; font-weight:700; }
+.roster-bottom { margin-top:32px; }
+.roster-bottom .member-role { display:block; color:#ebe5d8; font:700 12px/1.45 'Courier New',monospace; margin-top:5px; }
+.roster-bottom .member-bio { color:#bfb9af; margin:12px 0 0; font:400 15px/1.55 Arial,sans-serif; }
+.future-bands { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:24px; }
+.future-card { padding:19px 24px; min-height:150px; border:1px dashed #59564f; background:#1b1b1b; display:flex; flex-direction:column; justify-content:space-between; }
+.future-card .eyebrow { color:#a19b90; }
+.future-card strong { font:900 clamp(41px,5.5vw,74px)/.95 Impact,sans-serif; color:#dad7cb; letter-spacing:.02em; }
+.future-card > span:last-child { color:#bdb6a9; font:700 12px/1.4 'Courier New',monospace; }
+:lang(es) .hero-copy h1, :lang(eu) .hero-copy h1 { font-size:clamp(70px,8.8vw,138px); }
+:lang(es) .roster-title, :lang(eu) .roster-title { font-size:clamp(70px,8.5vw,145px); }
+@media(max-width:950px) {
+  .site-controls { gap:14px; }
+  .roster-photo { height:auto; }
+}
+@media(max-width:570px) {
+  .topbar-inner { row-gap:8px; }
+  .site-controls { width:100%; flex-direction:column; align-items:stretch; gap:7px; }
+  .site-controls nav { width:100%; gap:8px; justify-content:space-between; border-top:1px solid #aaa49a; padding-top:12px; }
+  .site-controls nav a { font-size:11px; white-space:nowrap; }
+  .lang-switch { align-self:flex-end; border-left:0; padding-left:0; }
+  .lang-switch button { padding-block:8px; min-height:34px; }
+  .release-cover-wrap { width:min(100%,420px); }
+  .release-cover { transform:none; border-width:6px; height:auto; aspect-ratio:1/1; }
+  .release-grid { gap:53px; }
+  .release-copy h2 { font-size:clamp(50px,12vw,79px); overflow-wrap:anywhere; }
+  .roster-title { font-size:clamp(54px,14vw,87px); overflow-wrap:anywhere; }
+  :lang(es) .roster-title, :lang(eu) .roster-title { font-size:clamp(50px,12vw,75px); }
+  .hero-copy h1 { font-size:clamp(64px,17.5vw,105px); }
+  :lang(es) .hero-copy h1, :lang(eu) .hero-copy h1 { font-size:clamp(55px,14.4vw,88px); }
+  .roster-photo-wrap { display:flex; flex-direction:column; align-items:stretch; }
+  .roster-photo-wrap:after { display:none; }
+  .roster-photo { height:auto; aspect-ratio:1400/933; object-fit:contain; }
+  .band-wordmark { position:relative; z-index:2; width:min(72%,330px); max-width:72%; bottom:auto; left:auto; margin:-8px 0 6px 8%; transform:rotate(-5deg); filter:drop-shadow(2px 3px 0 #111); }
+  .roster-people { position:static; text-align:center; margin:0 4px 16px; text-shadow:none; }
+  .roster-story { margin-top:20px; }
+  .roster-story > p:not(.eyebrow) { font-size:18px; line-height:1.5; }
+  .roster-bottom { margin-top:25px; }
+  .roster-bottom div { padding:21px 18px; }
+  .future-bands { gap:10px; }
+  .future-card { padding:15px; min-height:125px; }
+  .future-card > span:last-child { font-size:10px; }
+  .more-image img { transform:none; border-width:5px; }
+  .footer-bottom { padding-bottom:38px; }
+}
+/* Keep handwritten "next up" sticker in the selected language. */
+:lang(es) .more-image:after { content:'¿QUIÉN SIGUE?'; }
+:lang(eu) .more-image:after { content:'NOR DATOR?'; }
+</style>
 </head>
 <body>
-  <header class="topbar" id="top">
-    <div class="shell topbar-inner">
-      <a href="#top" class="brand" aria-label="Banned 21 Records home">
-        <img src="assets/vinyl.webp" alt="Banned 21 Records vinyl logo" width="63" height="63">
-        <span class="brand-wordmark"><strong>BANNED 21 RECORDS</strong><span>Independent label · Est. 2026</span></span>
-      </a>
-      <nav aria-label="Main navigation">
-        <a href="#release">First release</a>
-        <a href="#band">The band</a>
-        <a href="#about">The label</a>
-      </nav>
-      <span class="top-stamp" aria-hidden="true">NOT APPROVED</span>
-    </div>
-  </header>
-  <main>
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="shell hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">#BR-001 / A new independent record label / 2026</p>
-          <h1 class="condensed" id="hero-heading">BAD<br>IDEAS.<em>LOUD<br>MUSIC.</em></h1>
-          <p class="hero-desc">Loud music. Real problems. Questionable decisions.<br>Apparently, the world needed another record label.</p>
-          <div class="hero-buttons">
-            <a class="cta cta-red" href="#release">Meet our first release <span aria-hidden="true">↗</span></a>
-            <a class="cta cta-ghost" href="#about">What is this? <span aria-hidden="true">↓</span></a>
-          </div>
-        </div>
-        <div class="hero-art">
-          <img src="assets/vinyl.webp" alt="Black vinyl with Banned 21 Records label, number 21 and red BANNED stamp" width="1000" height="1000">
-          <span class="sticker">EST. 2026 / NO REFUNDS</span>
-        </div>
-      </div>
-    </section>
-    <div class="ticker" aria-label="Banned 21 Records. No age limit. No apologies. New music soon.">
-      <div class="ticker-track" aria-hidden="true">
-        <span>NO AGE LIMIT <b>✳</b> NO APOLOGIES <b>✳</b> SOMETHING NUMBERS <b>✳</b> TOO OLD FOR THIS SHIT... <b>✳</b> BANNED 21 RECORDS <b>✳</b></span>
-        <span>NO AGE LIMIT <b>✳</b> NO APOLOGIES <b>✳</b> SOMETHING NUMBERS <b>✳</b> TOO OLD FOR THIS SHIT... <b>✳</b> BANNED 21 RECORDS <b>✳</b></span>
-      </div>
-    </div>
-    <section class="release section" id="release" aria-labelledby="release-heading">
-      <div class="shell">
-        <div class="section-topline"><p class="eyebrow">01 // Upcoming releases</p><span class="eyebrow index">Catalogue no. B21-001</span></div>
-        <div class="release-grid">
-          <div class="release-cover-wrap"><img class="release-cover" src="assets/album.webp" alt="Something Numbers album cover, Too Old for This Shit: exhausted office worker in front of a chaotic office party" width="1254" height="1254" loading="lazy"></div>
-          <div class="release-copy">
-            <p class="eyebrow">Meet our first offenders</p>
-            <h2 class="condensed" id="release-heading">SOMETHING<br><span>NUMBERS!</span></h2>
-            <p>Eight songs about growing older without growing up. Pop-punk, bad Mondays, great nights, terrible decisions and just enough heart to make it all hurt.</p>
-            <div class="release-line">DEBUT ALBUM // COMING SOON</div>
-            <div class="release-detail"><span>ARTIST</span><strong>Something Numbers</strong></div>
-            <div class="release-detail"><span>ALBUM</span><strong>Too Old for This Shit...</strong></div>
-            <div class="release-detail"><span>FORMAT</span><strong>8 tracks · Digital</strong></div>
-            <div class="release-detail"><span>STATUS</span><strong>Release date to be announced</strong></div>
-            <p class="release-note">Streaming links will be available when the album is released.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="roster section" id="band" aria-labelledby="band-heading">
-      <div class="shell">
-        <div class="section-topline"><p class="eyebrow">02 // The roster</p><span class="eyebrow index">Three members. One bad idea.</span></div>
-        <h2 class="condensed roster-title" id="band-heading">TOO OLD TO <em>QUIT.</em></h2>
-        <div class="roster-photo-wrap">
-          <img class="roster-photo" src="assets/band.webp" alt="Something Numbers band members Matt, Liv and Billy in a playful group portrait against a coral-red backdrop" width="1400" height="933" loading="lazy">
-          <img class="band-wordmark" src="assets/band-logo.webp" alt="Something... NUMB3RS! logo" width="950" height="713" loading="lazy">
-          <div class="roster-people" aria-label="Band members"><strong>Matt Laudio</strong><strong>Liv Strom</strong><strong>Billy Marks</strong></div>
-        </div>
-        <div class="roster-bottom">
-          <div><b>MATT LAUDIO</b>VOCALS / GUITAR / BAD IDEAS</div>
-          <div><b>LIV STROM</b>DRUMS / CHAOS CONTROL</div>
-          <div><b>BILLY MARKS</b>BASS / QUESTIONABLE WISDOM</div>
-        </div>
-      </div>
-    </section>
-    <section class="manifesto" id="about" aria-labelledby="about-heading">
-      <div class="shell">
-        <p class="eyebrow">03 // Our extremely unofficial manifesto</p>
-        <h2 class="condensed" id="about-heading">WHO SAID<br>WE <span>COULDN'T?</span></h2>
-        <p>Banned 21 Records is an independent label for music with something to say, and apparently it has to be said loudly. Different bands. Different sounds. Same complete lack of respect for acting your age.</p>
-      </div>
-    </section>
-    <section class="more section" aria-labelledby="more-heading">
-      <div class="shell more-grid">
-        <div class="more-image"><img src="assets/backstage.webp" alt="Matt, Liv and Billy sitting together on equipment cases between takes" width="1300" height="867" loading="lazy"></div>
-        <div>
-          <p class="eyebrow">The catalogue is just getting started</p>
-          <h2 class="condensed" id="more-heading">MORE<br>NOISE.<br>SOON.</h2>
-          <p>Something Numbers are just the beginning. More bands, more sounds and more questionable creative choices are on the way.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="shell">
-      <div class="footer-top">
-        <div class="footer-logo">BANNED <span>21</span><br>RECORDS.</div>
-        <div class="footer-note">INDEPENDENT // EST. 2026<br>FIRST RELEASE: SOMETHING NUMBERS<br>INSTAGRAM: COMING SOON</div>
-      </div>
-      <div class="footer-bottom"><span>© 2026 BANNED 21 RECORDS. ALL RIGHTS RESERVED.</span><span>NEW BANDS. LOUD SONGS. VERY BAD TIMING.</span></div>
-    </div>
-  </footer>
-</body>
+<header class="topbar" id="top">
+<div class="shell topbar-inner">
+<a aria-label="Banned 21 Records home" class="brand" href="#top">
+<img alt="Banned 21 Records vinyl logo" height="63" src="assets/vinyl.webp" width="63"/>
+<span class="brand-wordmark"><strong>BANNED 21 RECORDS</strong><span data-i18n="brandSub">Independent label / Est. 2026</span></span>
+</a>
+<div class="site-controls"><nav aria-label="Navigation">
+<a data-i18n="navRelease" href="#release">The record</a>
+<a data-i18n="navBands" href="#band">The bands</a>
+<a data-i18n="navLabel" href="#about">The label</a>
+</nav><div aria-label="Language / Idioma / Hizkuntza" class="lang-switch" role="group"><button aria-pressed="true" data-lang="en" type="button">EN</button><button aria-pressed="false" data-lang="es" type="button">ES</button><button aria-pressed="false" data-lang="eu" type="button">EU</button></div></div>
+<span aria-hidden="true" class="top-stamp" data-i18n="stamp">NOT APPROVED</span>
+</div>
+</header>
+<main>
+<section aria-labelledby="hero-heading" class="hero">
+<div class="shell hero-grid">
+<div class="hero-copy">
+<p class="eyebrow" data-i18n="heroEyebrow">#BR-001 / A new independent record label / 2026</p>
+<h1 class="condensed" data-i18n-html="heroTitle" id="hero-heading">BAD<br/>IDEAS.<em>LOUD<br/>MUSIC.</em></h1>
+<p class="hero-desc" data-i18n-html="heroDesc">Loud music. Real problems. Questionable decisions.<br/>Apparently, the world needed another record label.</p>
+<div class="hero-buttons">
+<a class="cta cta-red" data-i18n-html="ctaRelease" href="#release">Meet our first release <span aria-hidden="true">↗</span></a>
+<a class="cta cta-ghost" data-i18n-html="ctaLabel" href="#about">What is this? <span aria-hidden="true">↓</span></a>
+</div>
+</div>
+<div class="hero-art">
+<img alt="Black vinyl with Banned 21 Records label, number 21 and red BANNED stamp" height="1000" src="assets/vinyl.webp" width="1000"/>
+<span class="sticker" data-i18n="vinylSticker">EST. 2026 / NO REFUNDS</span>
+</div>
+</div>
+</section>
+<div aria-label="Banned 21 Records. No age limit. No apologies. New music soon." class="ticker" data-i18n-aria="tickerAria">
+<div aria-hidden="true" class="ticker-track">
+<span data-i18n-html="ticker">NO AGE LIMIT <b>✳</b> NO APOLOGIES <b>✳</b> SOMETHING NUMBERS <b>✳</b> TOO OLD FOR THIS SHIT... <b>✳</b> BANNED 21 RECORDS <b>✳</b></span>
+<span data-i18n-html="ticker">NO AGE LIMIT <b>✳</b> NO APOLOGIES <b>✳</b> SOMETHING NUMBERS <b>✳</b> TOO OLD FOR THIS SHIT... <b>✳</b> BANNED 21 RECORDS <b>✳</b></span>
+</div>
+</div>
+<section aria-labelledby="release-heading" class="release section" id="release">
+<div class="shell">
+<div class="section-topline"><p class="eyebrow" data-i18n="releaseSection">01 // Upcoming releases</p><span class="eyebrow index" data-i18n="releaseIndex">Catalogue no. B21-001</span></div>
+<div class="release-grid">
+<div class="release-cover-wrap"><img alt="Something Numbers album cover, Too Old for This Shit: exhausted office worker in front of a chaotic office party" class="release-cover" height="1254" loading="lazy" src="assets/album.webp" width="1254"/></div>
+<div class="release-copy">
+<p class="eyebrow" data-i18n="releaseEyebrow">Meet our first offenders</p>
+<h2 class="condensed" id="release-heading">SOMETHING<br/><span>NUMBERS!</span></h2>
+<p data-i18n="albumDescription">Eight songs about getting older without turning boring. Pop-punk, bad Mondays, great nights, terrible decisions and just enough heart to make it all hurt.</p>
+<div class="release-line" data-i18n="albumComing">DEBUT ALBUM // COMING SOON</div>
+<div class="release-detail"><span data-i18n="artistLabel">ARTIST</span><strong>Something Numbers</strong></div>
+<div class="release-detail"><span data-i18n="albumLabel">ALBUM</span><strong>Too Old for This Shit...</strong></div>
+<div class="release-detail"><span data-i18n="formatLabel">FORMAT</span><strong data-i18n="albumFormat">8 tracks / Digital</strong></div>
+<div class="release-detail"><span data-i18n="statusLabel">STATUS</span><strong data-i18n="status">Release date to be announced</strong></div>
+<p class="release-note" data-i18n="releaseNote">Streaming links will be available when the album is released.</p>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="band-heading" class="roster section" id="band">
+<div class="shell">
+<div class="section-topline"><p class="eyebrow" data-i18n="rosterSection">02 // The bands</p><span class="eyebrow index" data-i18n="rosterIndex">Three members. One bad idea.</span></div>
+<h2 class="condensed roster-title" data-i18n-html="rosterTitle" id="band-heading">TOO OLD TO <em>QUIT.</em></h2>
+<div class="roster-photo-wrap">
+<img alt="Something Numbers band members Matt, Liv and Billy in a playful group portrait against a coral-red backdrop" class="roster-photo" height="933" loading="lazy" src="assets/band.webp" width="1400"/>
+<img alt="Something... NUMB3RS! logo" class="band-wordmark" height="713" loading="lazy" src="assets/band-logo.webp" width="950"/>
+<div aria-label="Band members" class="roster-people"><strong>Matt Laudio</strong><strong>Liv Strom</strong><strong>Billy Marks</strong></div>
+</div><div class="roster-story"><p class="eyebrow" data-i18n="bandEyebrow">NAVARRE // POP-PUNK</p><p data-i18n="bandStory">A pop-punk trio from Navarre, partying hard and determined to grow without growing old. Songs about nights that run long, Mondays that never end, and the magnificent mess of growing up without forgetting how to have fun.</p></div>
+<div class="roster-bottom">
+<div><b>MATT LAUDIO</b><span class="member-role" data-i18n="mattRole">VOCALS / GUITAR</span><p class="member-bio" data-i18n="mattBio">He came from Sheffield as a child. His grandfather was from Vitoria-Gasteiz. He has a gift for turning the worst Mondays into songs.</p></div>
+<div><b>LIV STROM</b><span class="member-role" data-i18n="livRole">DRUMS</span><p class="member-bio" data-i18n="livBio">Swedish father, mother from Estella-Lizarra. She keeps the beat going when everyone else has already lost count of the rounds.</p></div>
+<div><b>BILLY MARKS</b><span class="member-role" data-i18n="billyRole">BASS / BACKING VOCALS</span><p class="member-bio" data-i18n="billyBio">From Corpus Christi, Texas. Bass, backing vocals and shirts that are louder than the amplifiers.</p></div>
+</div><div class="future-bands"><article class="future-card"><span class="eyebrow">B21-002</span><strong>TBA</strong><span data-i18n="futureAct">NEXT SIGNING // CLASSIFIED</span></article><article class="future-card"><span class="eyebrow">B21-003</span><strong>TBA</strong><span data-i18n="futureAct">NEXT SIGNING // CLASSIFIED</span></article></div>
+</div>
+</section>
+<section aria-labelledby="about-heading" class="manifesto" id="about">
+<div class="shell">
+<p class="eyebrow" data-i18n="labelEyebrow">03 // An extremely unofficial manifesto</p>
+<h2 class="condensed" data-i18n-html="labelHeading" id="about-heading">WHO SAID<br/>WE <span>COULDN'T?</span></h2>
+<p data-i18n="labelManifesto">Banned 21 Records is an independent label for bands with something to say, and apparently it needs to be said loudly. Different bands. Different sounds. Zero enthusiasm for acting your age.</p>
+</div>
+</section>
+<section aria-labelledby="more-heading" class="more section">
+<div class="shell more-grid">
+<div class="more-image"><img alt="Matt, Liv and Billy sitting together on equipment cases between takes" height="867" loading="lazy" src="assets/backstage.webp" width="1300"/></div>
+<div>
+<p class="eyebrow" data-i18n="moreEyebrow">The catalogue is just getting started</p>
+<h2 class="condensed" data-i18n-html="moreTitle" id="more-heading">MORE<br/>NOISE.<br/>SOON.</h2>
+<p data-i18n="moreText">Something Numbers are just the beginning. Two more bands are waiting in the wings. Names? Not yet.</p>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="shell">
+<div class="footer-top">
+<div class="footer-logo">BANNED <span>21</span><br/>RECORDS.</div>
+<div class="footer-note" data-i18n-html="footerNote">INDEPENDENT // EST. 2026<br/>FIRST RELEASE: SOMETHING NUMBERS<br/>INSTAGRAM: COMING SOON</div>
+</div>
+<div class="footer-bottom"><span data-i18n="footerRights">© 2026 BANNED 21 RECORDS. ALL RIGHTS RESERVED.</span><span data-i18n="footerTagline">NEW BANDS. LOUD SONGS. VERY BAD TIMING.</span></div>
+</div>
+</footer>
+<script>
+(()=>{
+  const copy = {"en":{"pageTitle":"Banned 21 Records - Bad Ideas. Loud Music.","brandSub":"Independent label / Est. 2026","navRelease":"The record","navBands":"The bands","navLabel":"The label","stamp":"NOT APPROVED","heroEyebrow":"#BR-001 / A new independent record label / 2026","heroTitle":"BAD<br>IDEAS.<em>LOUD<br>MUSIC.</em>","heroDesc":"Loud music. Real problems. Questionable decisions.<br>Apparently, the world needed another record label.","ctaRelease":"Meet our first release <span aria-hidden=\"true\">\u2197</span>","ctaLabel":"What is this? <span aria-hidden=\"true\">\u2193</span>","vinylSticker":"EST. 2026 / NO REFUNDS","ticker":"NO AGE LIMIT <b>\u2733</b> NO APOLOGIES <b>\u2733</b> SOMETHING NUMBERS <b>\u2733</b> TOO OLD FOR THIS SHIT... <b>\u2733</b> BANNED 21 RECORDS <b>\u2733</b>","tickerAria":"Banned 21 Records. No age limit. No apologies. New music soon.","releaseSection":"01 // Upcoming releases","releaseIndex":"Catalogue no. B21-001","releaseEyebrow":"Meet our first offenders","albumDescription":"Eight songs about getting older without turning boring. Pop-punk, bad Mondays, great nights, terrible decisions and just enough heart to make it all hurt.","albumComing":"DEBUT ALBUM // COMING SOON","artistLabel":"ARTIST","albumLabel":"ALBUM","formatLabel":"FORMAT","statusLabel":"STATUS","albumFormat":"8 tracks / Digital","status":"Release date to be announced","releaseNote":"Streaming links will be available when the album is released.","rosterSection":"02 // The bands","rosterIndex":"Three members. One bad idea.","rosterTitle":"TOO OLD TO <em>QUIT.</em>","bandEyebrow":"NAVARRE // POP-PUNK","bandStory":"A pop-punk trio from Navarre, partying hard and determined to grow without growing old. Songs about nights that run long, Mondays that never end, and the magnificent mess of growing up without forgetting how to have fun.","mattRole":"VOCALS / GUITAR","livRole":"DRUMS","billyRole":"BASS / BACKING VOCALS","mattBio":"He came from Sheffield as a child. His grandfather was from Vitoria-Gasteiz. He has a gift for turning the worst Mondays into songs.","livBio":"Swedish father, mother from Estella-Lizarra. She keeps the beat going when everyone else has already lost count of the rounds.","billyBio":"From Corpus Christi, Texas. Bass, backing vocals and shirts that are louder than the amplifiers.","futureAct":"NEXT SIGNING // CLASSIFIED","labelEyebrow":"03 // An extremely unofficial manifesto","labelHeading":"WHO SAID<br>WE <span>COULDN'T?</span>","labelManifesto":"Banned 21 Records is an independent label for bands with something to say, and apparently it needs to be said loudly. Different bands. Different sounds. Zero enthusiasm for acting your age.","moreEyebrow":"The catalogue is just getting started","moreTitle":"MORE<br>NOISE.<br>SOON.","moreText":"Something Numbers are just the beginning. Two more bands are waiting in the wings. Names? Not yet.","footerNote":"INDEPENDENT // EST. 2026<br>FIRST RELEASE: SOMETHING NUMBERS<br>INSTAGRAM: COMING SOON","footerRights":"\u00a9 2026 BANNED 21 RECORDS. ALL RIGHTS RESERVED.","footerTagline":"NEW BANDS. LOUD SONGS. VERY BAD TIMING."},"es":{"pageTitle":"Banned 21 Records - Malas ideas. Buena m\u00fasica.","brandSub":"Sello independiente / Desde 2026","navRelease":"El disco","navBands":"Las bandas","navLabel":"El sello","stamp":"NO AUTORIZADO","heroEyebrow":"#BR-001 / Un nuevo sello independiente / 2026","heroTitle":"MALAS<br>IDEAS.<em>M\u00daSICA<br>A TOPE.</em>","heroDesc":"M\u00fasica a todo volumen. Problemas muy reales. Decisiones cuestionables.<br>Por lo visto, el mundo necesitaba otro sello discogr\u00e1fico.","ctaRelease":"Nuestro primer disco <span aria-hidden=\"true\">\u2197</span>","ctaLabel":"\u00bfY esto qu\u00e9 es? <span aria-hidden=\"true\">\u2193</span>","vinylSticker":"DESDE 2026 / SIN DEVOLUCIONES","ticker":"SIN L\u00cdMITE DE EDAD <b>\u2733</b> SIN PEDIR PERD\u00d3N <b>\u2733</b> SOMETHING NUMBERS <b>\u2733</b> TOO OLD FOR THIS SHIT... <b>\u2733</b> BANNED 21 RECORDS <b>\u2733</b>","tickerAria":"Banned 21 Records. Sin l\u00edmite de edad. Sin pedir perd\u00f3n. Pronto, m\u00e1s m\u00fasica.","releaseSection":"01 // Pr\u00f3ximos lanzamientos","releaseIndex":"Cat\u00e1logo n.\u00ba B21-001","releaseEyebrow":"Conoce a nuestros primeros delincuentes","albumDescription":"Ocho canciones sobre cumplir a\u00f1os sin volverse un muermo. Pop-punk fiestero, lunes horribles, noches enormes, decisiones discutibles y una pizca de coraz\u00f3n.","albumComing":"\u00c1LBUM DEBUT // PR\u00d3XIMAMENTE","artistLabel":"ARTISTA","albumLabel":"DISCO","formatLabel":"FORMATO","statusLabel":"ESTADO","albumFormat":"8 canciones / Digital","status":"Fecha por anunciar","releaseNote":"Los enlaces para escuchar el disco aparecer\u00e1n cuando se publique.","rosterSection":"02 // Las bandas","rosterIndex":"Tres miembros. Una mala idea.","rosterTitle":"DEMASIADO VIEJOS<br>PARA <em>PARAR.</em>","bandEyebrow":"NAVARRA // POP-PUNK","bandStory":"Un tr\u00edo navarro de pop-punk fiestero, con ganas de crecer sin envejecer. Canciones sobre noches que se alargan, lunes que no terminan y el peque\u00f1o desastre de hacerse adulto sin dejar de pasarlo bien.","mattRole":"VOZ / GUITARRA","livRole":"BATER\u00cdA","billyRole":"BAJO / COROS","mattBio":"Lleg\u00f3 de Sheffield siendo ni\u00f1o. Su abuelo era gasteiztarra. Tiene una facilidad sospechosa para convertir los peores lunes en canciones.","livBio":"Padre sueco y madre de Estella-Lizarra. Marca el ritmo de la fiesta cuando los dem\u00e1s ya han perdido la cuenta de las rondas.","billyBio":"De Corpus Christi, Texas. Bajo, coros y camisas que hacen m\u00e1s ruido que los amplificadores.","futureAct":"PR\u00d3XIMO FICHAJE // SECRETO","labelEyebrow":"03 // Nuestro manifiesto bastante poco oficial","labelHeading":"\u00bfQUI\u00c9N DIJO<br>QUE <span>NO?</span>","labelManifesto":"Banned 21 Records es un sello independiente para bandas que tienen cosas que contar y que, por lo visto, necesitan contarlas a gritos. Distintas bandas. Distintos sonidos. Cero ganas de comportarse como toca a nuestra edad.","moreEyebrow":"Esto no ha hecho m\u00e1s que empezar","moreTitle":"M\u00c1S<br>RUIDO.<br>PRONTO.","moreText":"Something Numbers son solo el principio. Hay otras dos bandas esperando su turno. Los nombres, de momento, nos los guardamos.","footerNote":"INDEPENDIENTE // DESDE 2026<br>PRIMER LANZAMIENTO: SOMETHING NUMBERS<br>INSTAGRAM: PR\u00d3XIMAMENTE","footerRights":"\u00a9 2026 BANNED 21 RECORDS. TODOS LOS DERECHOS RESERVADOS.","footerTagline":"NUEVAS BANDAS. M\u00daSICA ALTA. P\u00c9SIMO MOMENTO."},"eu":{"pageTitle":"Banned 21 Records - Ideia txarrak. Musika ozen.","brandSub":"Diskoetxe independentea / 2026tik","navRelease":"Diskoa","navBands":"Taldeak","navLabel":"Diskoetxea","stamp":"BAIMENDU GABE","heroEyebrow":"#BR-001 / Diskoetxe independente berri bat / 2026","heroTitle":"IDEIA<br>TXARRAK.<em>MUSIKA<br>OZEN.</em>","heroDesc":"Musika ozen. Benetako arazoak. Zalantzazko erabakiak.<br>Antza, munduak beste diskoetxe bat behar zuen.","ctaRelease":"Gure lehen diskoa <span aria-hidden=\"true\">\u2197</span>","ctaLabel":"Zer da hau? <span aria-hidden=\"true\">\u2193</span>","vinylSticker":"2026TIK / DIRUA EZ DA ITZULTZEN","ticker":"ADIN-MUGARIK EZ <b>\u2733</b> BARKAMENIK EZ <b>\u2733</b> SOMETHING NUMBERS <b>\u2733</b> TOO OLD FOR THIS SHIT... <b>\u2733</b> BANNED 21 RECORDS <b>\u2733</b>","tickerAria":"Banned 21 Records. Adin-mugarik ez. Barkamenik ez. Laster musika gehiago.","releaseSection":"01 // Datozen argitalpenak","releaseIndex":"Katalogo zk. B21-001","releaseEyebrow":"Hona hemen gure lehen gaizkileak","albumDescription":"Zahartu bai, baina aspergarri bihurtu gabe: zortzi kantu. Parrandarako pop-punka, astelehen latzak, gau handiak, erabaki zalantzagarriak eta bihotz pixka bat.","albumComing":"LEHEN DISKOA // LASTER","artistLabel":"ARTISTA","albumLabel":"DISKOA","formatLabel":"FORMATUA","statusLabel":"EGOERA","albumFormat":"8 kantu / Digitala","status":"Argitaratze-data zehazteko","releaseNote":"Diskoa argitaratzean jarriko ditugu entzuteko estekak.","rosterSection":"02 // Taldeak","rosterIndex":"Hiru kide. Ideia txar bat.","rosterTitle":"UZTEKO<br><em>ZAHARREGIAK.</em>","bandEyebrow":"NAFARROA // POP-PUNK","bandStory":"Nafarroako pop-punk hirukote parrandazalea, zahartu gabe hazteko gogoz. Gau luzeei, amaigabeko astelehenei eta ondo pasatzeari utzi gabe heldu bihurtzearen nahaspilari buruzko kantuak.","mattRole":"AHOTSA / GITARRA","livRole":"BATERIA","billyRole":"BAXUA / KORUAK","mattBio":"Txikitan Sheffieldetik etorri zen. Aitona Gasteizkoa zuen. Astelehenik txarrenak kantu bihurtzeko trebezia susmagarria du.","livBio":"Aita suediarra du, eta ama Lizarrakoa. Gainerakoek zenbatgarren tragoa daramaten ahaztu dutenean ere, erritmoari eusten dio.","billyBio":"Corpus Christikoa da, Texaskoa. Baxua, koruak eta anplifikadoreak baino zaratatsuagoak diren alkandorak.","futureAct":"HURRENGO TALDEA // SEKRETUAN","labelEyebrow":"03 // Gure manifestu ez hain ofiziala","labelHeading":"NORK ESAN DU<br><span>EZETZ?</span>","labelManifesto":"Banned 21 Records zerbait esateko duten taldeen diskoetxe independentea da; antza, ozen esan beharra dago. Talde desberdinak. Soinu desberdinak. Eta adinaren arabera jokatzeko inolako gogorik ez.","moreEyebrow":"Hau hasi besterik ez da egin","moreTitle":"ZARATA<br>GEHIAGO.<br>LASTER.","moreText":"Something Numbers hasiera besterik ez da. Beste bi talde txandaren zain daude. Izenak? Oraingoz, sekretupean.","footerNote":"INDEPENDENTEA // 2026TIK<br>LEHEN ARGITALPENA: SOMETHING NUMBERS<br>INSTAGRAM: LASTER","footerRights":"\u00a9 2026 BANNED 21 RECORDS. ESKUBIDE GUZTIAK GORDETA.","footerTagline":"TALDE BERRIAK. MUSIKA OZEN. UNE TXARRA."}};
+  const buttons=[...document.querySelectorAll('.lang-switch button')];
+  const setLanguage=(code)=>{
+    if(!copy[code])code='en';
+    const strings=copy[code];
+    document.documentElement.lang=code;
+    document.querySelectorAll('[data-i18n]').forEach(node=>{
+      const key=node.dataset.i18n;
+      if(Object.prototype.hasOwnProperty.call(strings,key))node.textContent=strings[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(node=>{
+      const key=node.dataset.i18nHtml;
+      if(Object.prototype.hasOwnProperty.call(strings,key))node.innerHTML=strings[key];
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(node=>{
+      const key=node.dataset.i18nAria;
+      if(Object.prototype.hasOwnProperty.call(strings,key))node.setAttribute('aria-label',strings[key]);
+    });
+    buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===code)));
+    const meta=document.querySelector('meta[name="description"]');
+    if(meta)meta.content={
+      en:'Independent record label Banned 21 Records. Something Numbers: Too Old for This Shit... Coming soon.',
+      es:'Banned 21 Records, sello discográfico independiente. Something Numbers: Too Old for This Shit... Próximamente.',
+      eu:'Banned 21 Records diskoetxe independentea. Something Numbers: Too Old for This Shit... Laster.'
+    }[code];
+    try{localStorage.setItem('b21-language',code)}catch(e){}
+  };
+  buttons.forEach(button=>button.addEventListener('click',()=>setLanguage(button.dataset.lang)));
+  let initial='en';
+  try{initial=localStorage.getItem('b21-language')||'en'}catch(e){}
+  setLanguage(initial);
+})();
+</script></body>
 </html>
