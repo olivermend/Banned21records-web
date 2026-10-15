@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#161615">
+  <meta name="description" content="Banned 21 Records. Independent virtual bands, real songs, questionable decisions. Meet Something Numbers and their debut Too Old for This Shit...">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Banned 21 Records | Bad ideas. Loud music.">
+  <meta property="og:description" content="Independent virtual bands. Very real problems. Our first release: Something Numbers — Too Old for This Shit... Coming soon.">
+  <meta property="og:image" content="assets/album.webp">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <title>Banned 21 Records — Bad Ideas. Loud Music.</title>
+  <style>
+    :root { --dark:#141414; --ink:#161616; --paper:#f0ede3; --red:#e33029; --acid:#e5ee1f; --muted:#b8b3a8; --line:rgba(255,255,255,.17); }
+    * { box-sizing:border-box }
+    html { scroll-behavior:smooth }
+    body { margin:0; color:var(--paper); background:var(--dark); font-family:Arial,Helvetica,sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden }
+    ::selection { background:var(--acid); color:var(--ink) }
+    a { color:inherit; text-decoration:none }
+    button,a { -webkit-tap-highlight-color:transparent }
+    a:focus-visible { outline:3px solid var(--acid); outline-offset:4px }
+    img { max-width:100%; display:block }
+    .shell { width:min(1440px,calc(100% - 88px)); margin-inline:auto }
+    .eyebrow { font:700 12px/1.45 'Courier New',monospace; text-transform:uppercase; letter-spacing:.17em }
+    .condensed { font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif; font-weight:900; letter-spacing:-.024em; line-height:.86; text-transform:uppercase }
+    .topbar { position:relative; z-index:20; background:var(--paper); border-bottom:5px solid var(--red); color:var(--ink) }
+    .topbar-inner { min-height:98px; display:flex; align-items:center; justify-content:space-between; gap:24px }
+    .brand { display:flex; align-items:center; gap:14px; min-width:0 }
+    .brand img { width:63px; height:63px; object-fit:contain }
+    .brand-wordmark { display:flex; flex-direction:column; gap:0 }
+    .brand-wordmark strong { font:900 clamp(21px,2.5vw,33px)/.95 Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif; letter-spacing:-.025em }
+    .brand-wordmark span { font:700 9px/1.6 'Courier New',monospace; letter-spacing:.26em; text-transform:uppercase }
+    nav { display:flex; align-items:center; gap:32px }
+    nav a { font:900 14px/1 Arial,Helvetica,sans-serif; text-transform:uppercase; letter-spacing:.055em; position:relative }
+    nav a::after { content:''; position:absolute; left:0; right:100%; bottom:-7px; height:3px; background:var(--red); transition:right .2s ease }
+    nav a:hover::after { right:0 }
+    .top-stamp { border:3px solid var(--red); color:var(--red); font:900 14px/1 Impact,sans-serif; transform:rotate(-7deg); padding:8px 10px; letter-spacing:.06em }
+    .hero { position:relative; isolation:isolate; min-height:690px; background:radial-gradient(ellipse at 79% 45%,#2d2b29 0%,#171717 55%,#121212 100%); overflow:hidden }
+    .hero:before { content:''; position:absolute; inset:0; z-index:-1; opacity:.12; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"); pointer-events:none }
+    .hero-grid { display:grid; grid-template-columns: 1fr .91fr; align-items:center; min-height:690px; gap:34px; padding-block:72px 92px }
+    .hero-copy { position:relative; z-index:2 }
+    .hero-copy .eyebrow { color:var(--acid); margin:0 0 29px }
+    h1 { margin:0; max-width:790px; font-size:clamp(85px,10.7vw,180px); word-break:normal; }
+    h1 em { display:block; width:max-content; max-width:100%; font-style:normal; color:var(--red); transform:rotate(-2deg); transform-origin:left center }
+    .hero-desc { max-width:500px; margin:33px 0 33px; font-size:clamp(18px,1.7vw,23px); line-height:1.44; color:#d5d1c8 }
+    .hero-buttons { display:flex; flex-wrap:wrap; gap:13px }
+    .cta { padding:16px 20px; font:900 13px/1 Arial,Helvetica,sans-serif; text-transform:uppercase; letter-spacing:.08em; border:2px solid currentColor; display:inline-flex; gap:13px; align-items:center; justify-content:center; transition:transform .16s ease,background .16s ease }
+    .cta:hover { transform:translate(-2px,-3px) }
+    .cta-red { background:var(--red); border-color:var(--red); color:white }
+    .cta-ghost { color:var(--paper) }
+    .hero-art { position:relative; justify-self:center; width:min(100%,590px); transform:rotate(11deg) translateY(-3px); filter:drop-shadow(0 22px 30px rgba(0,0,0,.6)) }
+    .hero-art img { width:100%; animation:vinyl 34s linear infinite }
+    .hero-art:before { content:''; position:absolute; inset:9%; border-radius:50%; border:1px solid rgba(255,255,255,.18) }
+    @keyframes vinyl { to { transform:rotate(360deg) } }
+    .hero-art .sticker { position:absolute; bottom:6%; left:-15%; background:var(--acid); color:var(--ink); font:900 clamp(17px,2vw,26px)/1 Impact,sans-serif; padding:14px 18px; transform:rotate(-18deg); box-shadow:7px 7px #080808 }
+    .ticker { overflow:hidden; background:var(--red); color:#101010; border-block:4px solid var(--ink); white-space:nowrap }
+    .ticker-track { display:flex; width:max-content; animation:marquee 36s linear infinite }
+    .ticker-track span { font:900 19px/1 Impact,sans-serif; padding:13px 20px; letter-spacing:.08em }
+    .ticker-track b { padding-inline:16px; color:#fff5de }
+    @keyframes marquee { to { transform:translateX(-50%) } }
+    .section { padding-block:108px }
+    .section-topline { display:flex; justify-content:space-between; align-items:center; margin:0 0 29px; gap:24px }
+    .section-topline .eyebrow { color:var(--red); margin:0 }
+    .section-topline .index { color:#888880 }
+    .release { background:var(--paper); color:var(--ink); position:relative }
+    .release-grid { display:grid; grid-template-columns:.92fr 1fr; gap:clamp(40px,7vw,112px); align-items:center }
+    .release-cover-wrap { position:relative; max-width:620px }
+    .release-cover { width:100%; border:10px solid #151515; box-shadow:18px 18px 0 #d5d0c3,24px 24px 0 var(--ink); transform:rotate(-2deg) }
+    .release-cover-wrap:after { content:'DEBUT • LP'; position:absolute; right:-23px; top:-27px; transform:rotate(9deg); border:4px solid var(--red); color:var(--red); background:var(--paper); font:900 18px/1 Impact,sans-serif; padding:13px 16px }
+    .release-copy .eyebrow { color:#a52c23; margin:0 0 15px }
+    .release-copy h2 { font-size:clamp(66px,7.2vw,124px); margin:0 0 24px; max-width:620px }
+    .release-copy h2 span { color:var(--red) }
+    .release-copy p { font-size:clamp(18px,1.5vw,23px); line-height:1.52; max-width:560px }
+    .release-copy .release-line { background:var(--ink); color:var(--paper); width:max-content; max-width:100%; padding:12px 16px; transform:rotate(-1deg); margin-block:27px; font:900 13px/1.3 'Courier New',monospace; letter-spacing:.04em }
+    .release-detail { display:grid; grid-template-columns:90px 1fr; gap:12px; border-top:1px solid #b4afa2; padding-block:16px; font-size:15px }
+    .release-detail span:first-child { font:700 12px/1.3 'Courier New',monospace; color:#777368 }
+    .release-note { font:700 12px/1.5 'Courier New',monospace; color:#666258; margin-top:16px }
+    .roster { position:relative; overflow:hidden }
+    .roster .section-topline .eyebrow { color:var(--acid) }
+    .roster-title { font-size:clamp(70px,10vw,165px); margin:0 0 28px; max-width:1000px }
+    .roster-title em { color:var(--red); font-style:normal }
+    .roster-photo { width:100%; height:clamp(350px,55vw,760px); object-fit:cover; object-position:center 45%; border:1px solid #555; filter:contrast(1.06) saturate(.88) }
+    .roster-photo-wrap { position:relative }
+    .roster-photo-wrap:after { content:''; position:absolute; inset:0; background:linear-gradient(0deg,rgba(0,0,0,.84),transparent 43%); pointer-events:none }
+    .band-wordmark { position:absolute; z-index:2; bottom:6%; left:4%; width:min(47%,550px); transform:rotate(-5deg); filter:drop-shadow(3px 4px 1px #111) }
+    .roster-people { position:absolute; z-index:3; right:4%; bottom:7%; text-align:right; font-size:clamp(13px,1.2vw,16px); line-height:1.8; text-shadow:1px 2px 5px #000 }
+    .roster-people strong { display:block; color:var(--acid); font:900 15px/1.5 'Courier New',monospace; letter-spacing:.12em }
+    .roster-bottom { display:grid; grid-template-columns:1fr 1fr 1fr; border-left:1px solid #4a4843; margin-top:24px }
+    .roster-bottom div { padding:19px 25px; border-right:1px solid #4a4843; font:700 13px/1.6 'Courier New',monospace; color:#aaa59b }
+    .roster-bottom b { display:block; color:white; font:900 20px/1.1 Impact,sans-serif; letter-spacing:.02em; margin-bottom:7px }
+    .manifesto { background:var(--red); color:#151515; padding-block:115px; position:relative }
+    .manifesto:after { content:'21'; position:absolute; right:3%; bottom:-40%; opacity:.08; font:900 min(50vw,700px)/1 Impact,sans-serif; pointer-events:none }
+    .manifesto h2 { font-size:clamp(78px,12vw,200px); max-width:1200px; margin:18px 0 30px }
+    .manifesto h2 span { color:var(--paper) }
+    .manifesto p { font-size:clamp(19px,2.2vw,28px); max-width:730px; font-weight:700; line-height:1.5; margin:0 }
+    .manifesto .eyebrow { margin:0 }
+    .more { background:#1b1b1b }
+    .more-grid { display:grid; grid-template-columns: .7fr 1fr; gap:70px; align-items:center }
+    .more-image { position:relative }
+    .more-image img { width:100%; filter:grayscale(.9) contrast(1.18); transform:rotate(2deg); border:8px solid #eee }
+    .more-image:after { content:'NEXT UP?'; position:absolute; bottom:-24px; right:-14px; background:var(--acid); color:#161616; padding:18px 22px; font:900 25px/1 Impact,sans-serif; transform:rotate(-5deg) }
+    .more h2 { font-size:clamp(66px,8vw,120px); margin:12px 0 25px }
+    .more p { max-width:560px; color:#cbc6bc; font-size:20px; line-height:1.5 }
+    .more .eyebrow { color:var(--acid) }
+    footer { border-top:5px solid var(--red); background:#090909; padding:46px 0 26px }
+    .footer-top { display:flex; align-items:end; justify-content:space-between; gap:35px; flex-wrap:wrap }
+    .footer-logo { font:900 clamp(40px,6vw,82px)/.89 Impact,sans-serif; text-transform:uppercase; letter-spacing:-.01em }
+    .footer-logo span { color:var(--red) }
+    .footer-note { text-align:right; font:700 12px/1.9 'Courier New',monospace; color:#a9a499 }
+    .footer-bottom { margin-top:40px; padding-top:16px; border-top:1px solid #444; display:flex; justify-content:space-between; flex-wrap:wrap; gap:9px; font:700 10px/1.5 'Courier New',monospace; color:#969086; letter-spacing:.04em }
+    @media(max-width:950px) {
+      .shell { width:min(100% - 42px,760px) }
+      .topbar-inner { min-height:80px }
+      nav { gap:16px }
+      nav a { font-size:12px }
+      .top-stamp { display:none }
+      .hero-grid { min-height:auto; padding-block:72px; grid-template-columns:1fr }
+      .hero-art { width:min(75%,510px); margin:15px auto 0 }
+      .hero-copy h1 { font-size:clamp(90px,16vw,145px) }
+      .release-grid,.more-grid { grid-template-columns:1fr; gap:65px }
+      .release-cover-wrap { max-width:550px; margin-inline:auto }
+      .release-copy h2 { font-size:clamp(74px,12vw,120px) }
+      .section { padding-block:82px }
+      .roster-bottom { grid-template-columns:1fr }
+      .roster-bottom div { border-bottom:1px solid #444 }
+    }
+    @media(max-width:570px) {
+      .shell { width:calc(100% - 34px) }
+      .brand img { width:48px; height:48px }
+      .brand-wordmark strong { font-size:21px }
+      .brand-wordmark span { font-size:8px; letter-spacing:.08em }
+      .topbar-inner { flex-wrap:wrap; padding-block:13px; row-gap:18px }
+      nav { width:100%; justify-content:space-between; border-top:1px solid #aaa49a; padding-top:15px }
+      nav a { font-size:12px }
+      .hero-grid { padding-block:48px 67px; gap:22px }
+      .hero-copy h1 { font-size:clamp(77px,21vw,119px); line-height:.87 }
+      .hero-copy .eyebrow { font-size:10px; margin-bottom:21px }
+      .hero-desc { margin:23px 0; font-size:18px }
+      .hero-art { width:87%; transform:rotate(8deg) }
+      .hero-art .sticker { font-size:15px; padding:10px; left:-9% }
+      .ticker-track span { font-size:16px; padding:12px }
+      .section { padding-block:72px }
+      .release-cover { border:6px solid #151515; box-shadow:9px 9px 0 #d5d0c3,14px 14px 0 var(--ink) }
+      .release-cover-wrap:after { font-size:13px; top:-21px; right:-12px; padding:9px; border-width:3px }
+      .release-copy h2 { font-size:clamp(65px,14vw,94px) }
+      .roster-title { font-size:clamp(70px,17vw,110px) }
+      .roster-photo { height:440px; object-position:center }
+      .band-wordmark { width:70%; left:3%; bottom:17% }
+      .roster-people { right:5%; left:5%; bottom:2%; text-align:center }
+      .roster-people strong { display:inline; font-size:11px }
+      .roster-people strong + strong:before { content:' · '; color:white }
+      .manifesto { padding-block:76px }
+      .manifesto h2 { font-size:clamp(70px,16vw,110px) }
+      .more h2 { font-size:clamp(65px,14vw,100px) }
+      .footer-note { text-align:left }
+    }
+    @media(prefers-reduced-motion:reduce) { *,*:before,*:after { animation-duration:.001ms!important; transition-duration:.001ms!important; scroll-behavior:auto!important } }
+  </style>
+</head>
+<body>
+  <header class="topbar" id="top">
+    <div class="shell topbar-inner">
+      <a href="#top" class="brand" aria-label="Banned 21 Records home">
+        <img src="assets/vinyl.webp" alt="Banned 21 Records vinyl logo" width="63" height="63">
+        <span class="brand-wordmark"><strong>BANNED 21 RECORDS</strong><span>Independent label · Est. 2026</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#release">First release</a>
+        <a href="#band">The band</a>
+        <a href="#about">The label</a>
+      </nav>
+      <span class="top-stamp" aria-hidden="true">NOT APPROVED</span>
+    </div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">#BR-001 / A new independent record label / 2026</p>
+          <h1 class="condensed" id="hero-heading">BAD<br>IDEAS.<em>LOUD<br>MUSIC.</em></h1>
+          <p class="hero-desc">Virtual bands. Real songs. Questionable decisions.<br>Apparently, the world needed another record label.</p>
+          <div class="hero-buttons">
+            <a class="cta cta-red" href="#release">Meet our first release <span aria-hidden="true">↗</span></a>
+            <a class="cta cta-ghost" href="#about">What is this? <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img src="assets/vinyl.webp" alt="Black vinyl with Banned 21 Records label, number 21 and red BANNED stamp" width="1000" height="1000">
+          <span class="sticker">EST. 2026 / NO REFUNDS</span>
+        </div>
+      </div>
+    </section>
+    <div class="ticker" aria-label="Banned 21 Records. No age limit. No apologies. New music soon.">
+      <div class="ticker-track" aria-hidden="true">
+        <span>NO AGE LIMIT <b>✳</b> NO APOLOGIES <b>✳</b> SOMETHING NUMBERS <b>✳</b> TOO OLD FOR THIS SHIT... <b>✳</b> BANNED 21 RECORDS <b>✳</b></span>
+        <span>NO AGE LIMIT <b>✳</b> NO APOLOGIES <b>✳</b> SOMETHING NUMBERS <b>✳</b> TOO OLD FOR THIS SHIT... <b>✳</b> BANNED 21 RECORDS <b>✳</b></span>
+      </div>
+    </div>
+    <section class="release section" id="release" aria-labelledby="release-heading">
+      <div class="shell">
+        <div class="section-topline"><p class="eyebrow">01 // Upcoming releases</p><span class="eyebrow index">Catalogue no. B21-001</span></div>
+        <div class="release-grid">
+          <div class="release-cover-wrap"><img class="release-cover" src="assets/album.webp" alt="Something Numbers album cover, Too Old for This Shit: exhausted office worker in front of a chaotic office party" width="1254" height="1254" loading="lazy"></div>
+          <div class="release-copy">
+            <p class="eyebrow">Meet our first offenders</p>
+            <h2 class="condensed" id="release-heading">SOMETHING<br><span>NUMBERS!</span></h2>
+            <p>Eight songs about growing older without growing up. Pop-punk, bad Mondays, great nights, terrible decisions and just enough heart to make it all hurt.</p>
+            <div class="release-line">DEBUT ALBUM // COMING SOON</div>
+            <div class="release-detail"><span>ARTIST</span><strong>Something Numbers</strong></div>
+            <div class="release-detail"><span>ALBUM</span><strong>Too Old for This Shit...</strong></div>
+            <div class="release-detail"><span>FORMAT</span><strong>8 tracks · Digital</strong></div>
+            <div class="release-detail"><span>STATUS</span><strong>Release date to be announced</strong></div>
+            <p class="release-note">Streaming links will appear here when the record is live. No pretend buttons, thanks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="roster section" id="band" aria-labelledby="band-heading">
+      <div class="shell">
+        <div class="section-topline"><p class="eyebrow">02 // The roster</p><span class="eyebrow index">Three members. One bad idea.</span></div>
+        <h2 class="condensed roster-title" id="band-heading">TOO OLD TO <em>QUIT.</em></h2>
+        <div class="roster-photo-wrap">
+          <img class="roster-photo" src="assets/band.webp" alt="Something Numbers band members Matt, Liv and Billy in a playful group portrait against a coral-red backdrop" width="1400" height="933" loading="lazy">
+          <img class="band-wordmark" src="assets/band-logo.webp" alt="Something... NUMB3RS! logo" width="950" height="713" loading="lazy">
+          <div class="roster-people" aria-label="Band members"><strong>Matt Laudio</strong><strong>Liv Strom</strong><strong>Billy Marks</strong></div>
+        </div>
+        <div class="roster-bottom">
+          <div><b>MATT LAUDIO</b>VOCALS / GUITAR / BAD IDEAS</div>
+          <div><b>LIV STROM</b>DRUMS / CHAOS CONTROL</div>
+          <div><b>BILLY MARKS</b>BASS / QUESTIONABLE WISDOM</div>
+        </div>
+      </div>
+    </section>
+    <section class="manifesto" id="about" aria-labelledby="about-heading">
+      <div class="shell">
+        <p class="eyebrow">03 // Our extremely unofficial manifesto</p>
+        <h2 class="condensed" id="about-heading">WHO SAID<br>WE <span>COULDN'T?</span></h2>
+        <p>Banned 21 Records is an independent home for virtual artists with a very human problem: they have things to say, and apparently they have to say them loudly. Different bands. Different sounds. Same complete lack of respect for acting your age.</p>
+      </div>
+    </section>
+    <section class="more section" aria-labelledby="more-heading">
+      <div class="shell more-grid">
+        <div class="more-image"><img src="assets/backstage.webp" alt="Matt, Liv and Billy sitting together on equipment cases between takes" width="1300" height="867" loading="lazy"></div>
+        <div>
+          <p class="eyebrow">The catalogue is just getting started</p>
+          <h2 class="condensed" id="more-heading">MORE<br>NOISE.<br>SOON.</h2>
+          <p>Something Numbers are just the beginning. More bands, more sounds and more questionable creative choices are on the way.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-logo">BANNED <span>21</span><br>RECORDS.</div>
+        <div class="footer-note">INDEPENDENT // EST. 2026<br>FIRST RELEASE: SOMETHING NUMBERS<br>INSTAGRAM: COMING SOON</div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 BANNED 21 RECORDS. ALL RIGHTS RESERVED.</span><span>VIRTUAL ARTISTS. REAL MUSIC. VERY BAD TIMING.</span></div>
+    </div>
+  </footer>
+</body>
+</html>
