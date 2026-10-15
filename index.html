@@ -234,7 +234,16 @@ img { height:auto; }
     .team-role { display:block; margin-bottom:19px; font:900 12px/1.45 'Courier New',monospace; letter-spacing:.02em; text-transform:uppercase; color:#ad3028; min-height:35px; }
     .team-description { margin:0; font-size:16px; line-height:1.55; }
     @media(max-width:850px) { .team-grid { grid-template-columns:1fr; gap:18px; } .team-card { padding:25px 23px 29px; } .team-number { margin-bottom:19px; } .team-role { min-height:0; } .team-name { font-size:clamp(32px,7vw,44px); } }
-  </style>
+  
+    /* Founder portraits: uniform 4:5 crops, no stretching */
+    .team-card { padding:0; overflow:hidden; }
+    .team-portrait { display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:center; background:#d5d1cb; }
+    .team-card-content { padding:27px 26px 34px; }
+    @media(max-width:850px) {
+      .team-card { max-width:560px; width:100%; margin-inline:auto; }
+      .team-card-content { padding:25px 23px 29px; }
+    }
+</style>
 </head>
 <body>
 <header class="topbar" id="top">
@@ -323,21 +332,30 @@ img { height:auto; }
   <h2 class="condensed team-heading" id="team-heading" data-i18n-html="teamTitle">THE PEOPLE<br><em>IN CHARGE.</em></h2>
   <p class="team-intro" data-i18n="teamIntro">Three co-founders. One independent record label.</p>
   <div class="team-grid">
-    <article class="team-card"><span class="team-number">01 / 03</span>
+    <article class="team-card">
+<img class="team-portrait" src="assets/team/monica.svg" alt="Retrato en blanco y negro de Mónica Argote" width="960" height="1200" loading="lazy" decoding="async"/>
+<div class="team-card-content"><span class="team-number">01 / 03</span>
       <h3 class="team-name">Mónica Argote</h3>
       <span class="team-role" data-i18n="monicaRole">Co-Founder &amp; CEO</span>
       <p class="team-description" data-i18n="monicaTask">She was an engineer. She didn't like it. So she did what any reasonable person would do: quit everything and start a record label. Now she runs Banned 21 Records and tries to make our worst ideas sound fantastic.</p>
-    </article>
-    <article class="team-card"><span class="team-number">02 / 03</span>
+    </div>
+</article>
+    <article class="team-card">
+<img class="team-portrait" src="assets/team/roberto.svg" alt="Retrato en blanco y negro de Roberto Rodríguez" width="960" height="1200" loading="lazy" decoding="async"/>
+<div class="team-card-content"><span class="team-number">02 / 03</span>
       <h3 class="team-name">Roberto Rodríguez</h3>
       <span class="team-role" data-i18n="robertoRole">Co-Founder &amp; Talent Manager</span>
       <p class="team-description" data-i18n="robertoTask">He started out managing small bands, the kind that played to twenty people and got paid in beer. One tiny venue after another, armed with contacts nobody quite knows how he got, he ended up at Banned 21 Records. Now he scouts talent and looks after the bands. Curiously, he's never around when the amps need carrying.</p>
-    </article>
-    <article class="team-card"><span class="team-number">03 / 03</span>
+    </div>
+</article>
+    <article class="team-card">
+<img class="team-portrait" src="assets/team/sabi.svg" alt="Retrato en blanco y negro de Sabine Sabi Satrustegi" width="960" height="1200" loading="lazy" decoding="async"/>
+<div class="team-card-content"><span class="team-number">03 / 03</span>
       <h3 class="team-name">Sabine «Sabi» Satrustegi</h3>
       <span class="team-role" data-i18n="sabiRole">Co-Founder &amp; Head of PR</span>
       <p class="team-description" data-i18n="sabiTask">She used to be a journalist. Now she makes sure other journalists talk about our bands. She handles press, communications and promotion at Banned 21 Records. Making noise is easy. Getting someone to listen is another matter.</p>
-    </article>
+    </div>
+</article>
   </div>
 </div>
 </section>
