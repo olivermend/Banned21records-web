@@ -13,9 +13,9 @@
 .band-panel[hidden]{display:none!important}
 .roster-title--moderately{font-size:clamp(52px,8.4vw,130px);max-width:1150px;overflow-wrap:anywhere}
 .roster-title--moderately em{color:#e33029}
-.roster-photo--moderately{object-position:center center;filter:contrast(1.06) saturate(.94)}
-.roster-photo-wrap--moderately::after{background:linear-gradient(0deg,rgba(0,0,0,.64),transparent 35%)}
-.band-wordmark--moderately{left:50%;bottom:6%;width:min(41%,510px);transform:translateX(-50%);background:#f0ede3;padding:8px 14px;filter:drop-shadow(0 8px 14px rgba(0,0,0,.55))}
+.roster-photo--moderately{object-position:center center;filter:none}
+.roster-photo-wrap--moderately::after{display:none}
+.band-wordmark--moderately{position:absolute;z-index:2;top:1.5%;left:1%;right:auto;bottom:auto;width:61%;max-width:61%;height:auto;margin:0;padding:0;background:transparent;transform:none;filter:none;pointer-events:none}
 .roster-bottom--duo{grid-template-columns:repeat(2,minmax(0,1fr))}
 .roster-bottom--duo div{min-height:85px}
 .ma-album{display:grid;grid-template-columns:minmax(130px,255px) 1fr;gap:28px;align-items:center;margin-top:30px;padding:26px;background:#1f1e1c;border:1px solid #5d5952}
@@ -24,4 +24,4 @@
 .ma-album-copy h3{font-size:clamp(42px,5.7vw,86px);line-height:.91;color:#f0ede3;margin:0 0 22px;letter-spacing:.01em}
 .ma-album-copy>p:last-child{font:700 12px/1.5 'Courier New',monospace;color:#b8b3a8}
 @media(max-width:950px){.band-switch{padding:18px}.band-switch-details strong{font-size:clamp(23px,3.7vw,33px)}}
-@media(max-width:570px){.band-picker{grid-template-columns:1fr;gap:9px;margin-bottom:24px}.band-switch{padding:14px 16px}.band-switch-details strong{font-size:27px}.band-switch-details small{font-size:10px}.roster-title--moderately{font-size:clamp(42px,12vw,73px)}.band-wordmark--moderately{width:56%;padding:5px 8px}.roster-bottom--duo{grid-template-columns:1fr}.ma-album{grid-template-columns:1fr;gap:17px;padding:18px}.ma-album-cover{max-width:220px}.ma-album-copy h3{font-size:clamp(42px,12vw,63px)}}
+@media(max-width:570px){.band-picker{grid-template-columns:1fr;gap:9px;margin-bottom:24px}.band-switch{padding:14px 16px}.band-switch-details strong{font-size:27px}.band-switch-details small{font-size:10px}.roster-title--moderately{font-size:clamp(42px,12vw,73px)}.band-wordmark--moderately{position:absolute;top:1.5%;left:1%;bottom:auto;width:61%;max-width:61%;margin:0;padding:0;transform:none}.roster-bottom--duo{grid-template-columns:1fr}.ma-album{grid-template-columns:1fr;gap:17px;padding:18px}.ma-album-cover{max-width:220px}.ma-album-copy h3{font-size:clamp(42px,12vw,63px)}}
