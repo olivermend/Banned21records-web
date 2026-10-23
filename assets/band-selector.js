@@ -3,7 +3,7 @@
 (function(){
   const tabs = [...document.querySelectorAll('[data-band-target]')];
   const panels = [...document.querySelectorAll('[data-band-panel]')];
-  if(tabs.length !== 2 || panels.length !== 2) return;
+  if(!tabs.length || tabs.length !== panels.length) return;
   function activate(name) {
     if(!tabs.some(tab=>tab.dataset.bandTarget===name)) return;
     tabs.forEach(tab => {
@@ -24,5 +24,5 @@
       activate(tabs[next].dataset.bandTarget);
     });
   });
-  activate(location.hash==='#moderately-alive'?'moderately':'numbers');
+  activate(location.hash==='#auxkalo'?'auxkalo':location.hash==='#moderately-alive'?'moderately':'numbers');
 })();
