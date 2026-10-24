@@ -1,0 +1,11 @@
+*.wav
+*.flac
+*.aiff
+*.aif
+*.mp3
+*.zip
+*.env
+.env*
+credentials*
+secrets*
+*.session
