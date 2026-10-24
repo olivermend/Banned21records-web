@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "label": "BANNED 21 RECORDS",
+  "artist": {
+    "name": "AUXkalo!",
+    "url": "https://auxkalo.bandcamp.com/",
+    "location": "Bilbao, Basque Country, Spain",
+    "tags": [
+      "electropunk",
+      "dance punk",
+      "basque",
+      "subno-txunta"
+    ]
+  },
+  "release": {
+    "title": "KALIMOTXO DA BIDE BAKARRA!",
+    "type": "album",
+    "cover_file": null,
+    "description": null,
+    "release_date": null,
+    "price": null,
+    "currency": null,
+    "rights_holder": null,
+    "tracks": []
+  },
+  "status": "draft",
+  "note": "Fill tracks from validated WAVs. Do not infer rights, track order or prices."
+}
