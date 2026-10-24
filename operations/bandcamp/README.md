@@ -9,8 +9,8 @@ Status: PREPARATION ONLY. No Bandcamp authentication, uploads, purchases or rele
 - Genre: Subno-Txunta / electro-punk / dance-punk
 - Location: Bilbao, Basque Country, Spain
 - Members: DANBA, TXO!, KAR-KAR, NAI-NAI
-- Album working title on current website: Askatasuna eta Kalimotxoa (verify exact release metadata before publishing)
-- Album art: /assets/artists/auxkalo-askatasuna-eta-kalimotxoa.webp (web preview only; obtain high-resolution source for upload)
+- CONFIRMED debut album title: KALIMOTXO DA BIDE BAKARRA! (correct spelling, with exclamation mark). Previous title Askatasuna eta Kalimotxoa is superseded.
+- CONFIRMED new cover supplied in conversation on 2026-10-24: square press-conference photograph of four masked members, blue background, embroidered kalimotxo on ikurriña, black label strips. The uploaded image is not yet in GitHub; do not reuse the former album cover. Need to transfer the approved original image into repository and Bandcamp.
 - Artist photo: /assets/artists/auxkalo-band.webp
 
 ## Safe release pipeline
