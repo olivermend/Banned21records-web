@@ -11,7 +11,7 @@
 <meta name="twitter:title" content="BANNED 21 RECORDS | Something Numbers · Moderately Alive · AUXkalo!"/>
 <meta name="twitter:description" content="Tres bandas de BANNED 21 RECORDS: punk pop, synthpop ochentero y Subno-Txunta desde Bilbao."/>
 <meta name="twitter:image" content="https://olivermend.github.io/Banned21records-web/assets/artists/auxkalo-band.webp"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://olivermend.github.io/Banned21records-web/#label","name":"BANNED 21 RECORDS","url":"https://olivermend.github.io/Banned21records-web/","description":"Sello musical independiente de Something Numbers, Moderately Alive y AUXkalo!."},{"@type":"WebSite","@id":"https://olivermend.github.io/Banned21records-web/#website","url":"https://olivermend.github.io/Banned21records-web/","name":"BANNED 21 RECORDS","publisher":{"@id":"https://olivermend.github.io/Banned21records-web/#label"}},{"@type":"MusicGroup","@id":"https://olivermend.github.io/Banned21records-web/#auxkalo","name":"AUXkalo!","url":"https://olivermend.github.io/Banned21records-web/#auxkalo","genre":["Subno-Txunta","Punk","Dance"],"foundingLocation":{"@type":"Place","name":"Bilbao, Bizkaia"},"description":"Grupo de Bilbao de Subno-Txunta. Mentalmente anclados en los doce años, no han sido serios ni en el funeral de su tía abuela.","member":[{"@type":"Person","name":"DANBA"},{"@type":"Person","name":"TXO!"},{"@type":"Person","name":"KAR-KAR"},{"@type":"Person","name":"NAI-NAI"}],"image":"https://olivermend.github.io/Banned21records-web/assets/artists/auxkalo-band.webp","album":{"@type":"MusicAlbum","name":"KALIMOTXO DA BIDE BAKARRA!","image":"https://olivermend.github.io/Banned21records-web/assets/artists/auxkalo-band.webp"}},{"@type":"MusicGroup","@id":"https://olivermend.github.io/Banned21records-web/#moderately-alive","name":"Moderately Alive","url":"https://olivermend.github.io/Banned21records-web/#moderately-alive","genre":["Synthpop","Hi-NRG"]},{"@type":"MusicGroup","@id":"https://olivermend.github.io/Banned21records-web/#something-numbers","name":"Something Numbers","url":"https://olivermend.github.io/Banned21records-web/#something-numbers","genre":["Pop-punk","Skate punk"]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://olivermend.github.io/Banned21records-web/#label","name":"BANNED 21 RECORDS","url":"https://olivermend.github.io/Banned21records-web/","description":"Sello musical independiente de Something Numbers, Moderately Alive y AUXkalo!."},{"@type":"WebSite","@id":"https://olivermend.github.io/Banned21records-web/#website","url":"https://olivermend.github.io/Banned21records-web/","name":"BANNED 21 RECORDS","publisher":{"@id":"https://olivermend.github.io/Banned21records-web/#label"}},{"@type":"MusicGroup","@id":"https://olivermend.github.io/Banned21records-web/#auxkalo","name":"AUXkalo!","url":"https://olivermend.github.io/Banned21records-web/#auxkalo","genre":["Subno-Txunta","Punk","Dance"],"foundingLocation":{"@type":"Place","name":"Bilbao, Bizkaia"},"description":"Grupo de Bilbao de Subno-Txunta. Mentalmente anclados en los doce años, no han sido serios ni en el funeral de su tía abuela.","member":[{"@type":"Person","name":"DANBA"},{"@type":"Person","name":"TXO!"},{"@type":"Person","name":"KAR-KAR"},{"@type":"Person","name":"NAI-NAI"}],"image":"https://olivermend.github.io/Banned21records-web/assets/artists/auxkalo-band.webp","album":{"@type":"MusicAlbum","name":"KALIMOTXO DA BIDE BAKARRA!","image":"https://olivermend.github.io/Banned21records-web/assets/artists/auxkalo-kalimotxo-da-bide-bakarra.svg"}},{"@type":"MusicGroup","@id":"https://olivermend.github.io/Banned21records-web/#moderately-alive","name":"Moderately Alive","url":"https://olivermend.github.io/Banned21records-web/#moderately-alive","genre":["Synthpop","Hi-NRG"]},{"@type":"MusicGroup","@id":"https://olivermend.github.io/Banned21records-web/#something-numbers","name":"Something Numbers","url":"https://olivermend.github.io/Banned21records-web/#something-numbers","genre":["Pop-punk","Skate punk"]}]}</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="#161615" name="theme-color"/>
@@ -276,6 +276,53 @@ img { height:auto; }
     }
     .footer-note a { color:var(--paper); text-decoration:underline; text-underline-offset:3px; }
     .footer-note a:hover { color:var(--red); }
+
+/* AUXkalo!: clean embossed Dymo-style name label, visually matched to the album sleeve. */
+.band-wordmark--auxkalo {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(7px, 1.2vw, 15px);
+  width: max-content;
+  max-width: 92%;
+  padding: clamp(9px,1.2vw,15px) clamp(15px,2.3vw,28px);
+  margin: -42px 0 12px 5%;
+  border: 1px solid #303030;
+  border-radius: 2px;
+  background: linear-gradient(175deg,#252525 0%,#060606 43%,#181818 78%,#090909 100%);
+  color: #f5f5f2;
+  font: 800 clamp(20px, 4.2vw, 52px)/1.1 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: .105em;
+  white-space: nowrap;
+  text-transform: none;
+  box-shadow: 0 6px 9px rgba(0,0,0,.6), inset 0 1px 1px rgba(255,255,255,.25);
+  text-shadow: 0 -1px 0 #666, 0 1.5px 1px #000, 1px 1px 1px #777;
+  transform: rotate(-4deg);
+}
+.band-wordmark--auxkalo > span { display: inline-block; }
+.band-wordmark--auxkalo .aux-jack-socket {
+  flex: 0 0 auto; width: .55em; height: .55em;
+  border-radius: 50%;
+  border: .11em solid #e6e2d8;
+  background: radial-gradient(circle,#080808 0 36%,#8c8b88 42% 49%,#171717 51%);
+  box-shadow: inset 0 1px 2px #000, 0 1px 1px #777;
+}
+.band-wordmark--auxkalo .aux-red-dot {
+  flex: 0 0 auto;
+  width: .42em; height: .42em; border-radius: 50%;
+  background: #e30c17;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,.45), 0 0 0 2px #111, 1px 1px 2px #000;
+}
+@media(max-width:600px) {
+  .band-wordmark--auxkalo {
+    font-size: clamp(18px,5.2vw,31px);
+    gap: 7px;
+    margin: -27px 0 9px 4%;
+    max-width: 95%;
+    padding: 9px 13px;
+    letter-spacing: .06em;
+  }
+}
+
 </style>
 <link rel="stylesheet" href="assets/band-selector.css"/>
 <script defer src="assets/band-selector.js"></script>
@@ -374,7 +421,7 @@ img { height:auto; }
 <h2 class="condensed roster-title roster-title--auxkalo" data-i18n-html="auxHeading">INDEPES, BAINA <em>JATORRAK.</em></h2>
 <div class="roster-photo-wrap roster-photo-wrap--auxkalo">
 <img alt="AUXkalo!: DANBA, TXO!, KAR-KAR and NAI-NAI in their red, green and white Ikurriña Couture outfits at a ceremonial hall" class="roster-photo roster-photo--auxkalo" width="1400" height="933" loading="lazy" decoding="async" src="assets/artists/auxkalo-band.webp"/>
-<div class="band-wordmark band-wordmark--auxkalo" role="img" aria-label="AUXkalo!">AUX<span>kalo!</span></div>
+<div class="band-wordmark band-wordmark--auxkalo" role="img" aria-label="AUXkalo!"><span class="aux-jack-socket" aria-hidden="true"></span><span>AUX</span><span class="aux-red-dot" aria-hidden="true"></span><span>Kalo!</span></div>
 </div>
 <div class="roster-story"><p class="eyebrow" data-i18n="auxEyebrow">EUSKARA // PUNK / DANCE / FIESTA</p><p data-i18n="auxStory">AUXkalo! are from Bilbao, straight out of Subno-Txunta. Still mentally twelve years old, they have never taken anything seriously, not even their great-aunt's funeral. Their debut album is KALIMOTXO DA BIDE BAKARRA!.</p></div>
 <div class="roster-bottom roster-bottom--quartet">
@@ -383,7 +430,7 @@ img { height:auto; }
 <div><b>KAR-KAR</b><span class="member-role" data-i18n="karkarRole">LEAD VOCALS</span></div>
 <div><b>NAI-NAI</b><span class="member-role" data-i18n="nainaiRole">LEAD VOCALS</span></div>
 </div>
-<p style="margin:18px 0;font-weight:800"><a href="https://auxkalo.bandcamp.com/" target="_blank" rel="noopener noreferrer" style="color:#e5ee1f">AUXkalo! EN BANDCAMP ↗</a> · <a href="auxkalo/" style="color:#e5ee1f">FICHA DEL GRUPO ↗</a></p><div class="ma-album auxkalo-album"><img alt="AUXkalo! promotional photo; approved album cover to be uploaded" class="ma-album-cover" src="assets/artists/auxkalo-band.webp" width="1024" height="1024" loading="lazy" decoding="async"/><div class="ma-album-copy"><p class="eyebrow" data-i18n="auxAlbumLabel">DEBUT ALBUM</p><h3 class="condensed">ASKATASUNA ETA KALIMOTXOA</h3><p data-i18n="auxComing">COMING SOON // DATE TBA</p></div></div>
+<p style="margin:18px 0;font-weight:800"><a href="https://auxkalo.bandcamp.com/" target="_blank" rel="noopener noreferrer" style="color:#e5ee1f">AUXkalo! EN BANDCAMP ↗</a> · <a href="auxkalo/" style="color:#e5ee1f">FICHA DEL GRUPO ↗</a></p><div class="ma-album auxkalo-album"><img alt="Portada oficial del álbum de AUXkalo!: KALIMOTXO DA BIDE BAKARRA!, con los cuatro integrantes enmascarados bajo una ikurriña con kalimotxo bordado" class="ma-album-cover" src="assets/artists/auxkalo-kalimotxo-da-bide-bakarra.svg" width="1254" height="1254" loading="lazy" decoding="async"/><div class="ma-album-copy"><p class="eyebrow" data-i18n="auxAlbumLabel">DEBUT ALBUM</p><h3 class="condensed">KALIMOTXO DA BIDE BAKARRA!</h3><p data-i18n="auxComing">COMING SOON // DATE TBA</p></div></div>
 </div>
 </div>
 </section>
