@@ -486,7 +486,7 @@ img { height:auto; }
 <div><b>MATT LAUDIO</b><span class="member-role" data-i18n="mattRole">VOCALS / GUITAR</span><p class="member-bio" data-i18n="mattBio">He came from Sheffield as a child. His grandfather was from Vitoria-Gasteiz. He has a gift for turning the worst Mondays into songs.</p></div>
 <div><b>LIV STROM</b><span class="member-role" data-i18n="livRole">DRUMS</span><p class="member-bio" data-i18n="livBio">Swedish father, mother from Estella-Lizarra. She keeps the beat going when everyone else has already lost count of the rounds.</p></div>
 <div><b>BILLY MARKS</b><span class="member-role" data-i18n="billyRole">BASS / BACKING VOCALS</span><p class="member-bio" data-i18n="billyBio">From Corpus Christi, Texas. Bass, backing vocals and shirts that are louder than the amplifiers.</p></div>
-</div></div>
+</div><p style="margin:18px 0;font-weight:800"><a href="something-numbers/en/" data-artist-profile="something-numbers" data-i18n="auxBandProfile" style="color:#e5ee1f">ARTIST PAGE ↗</a></p></div>
 
 <div class="band-panel" id="band-panel-moderately" data-band-panel="moderately" role="tabpanel" aria-labelledby="band-tab-moderately" tabindex="0" hidden>
 <h2 class="condensed roster-title roster-title--moderately">CALL ME A<br/><em>BAD IDEA</em></h2>
@@ -496,7 +496,7 @@ img { height:auto; }
 </div>
 <div class="roster-story"><p class="eyebrow" data-i18n="maEyebrow">ERMUA + EIBAR // 80s SYNTHPOP / HI-NRG</p><p data-i18n="maStory">KLIO (Ermua) and Z (Eibar) are MODERATELY ALIVE, an electronic duo with an eighties synthpop and Hi-NRG sound. Their debut album, Dressed for Disaster, is coming soon.</p></div>
 <div class="roster-bottom roster-bottom--duo"><div><b>KLIO</b><span class="member-role" data-i18n="klioOrigin">FROM ERMUA</span></div><div><b>Z</b><span class="member-role" data-i18n="zOrigin">FROM EIBAR</span></div></div>
-<div class="ma-album"><img alt="Official cover of Dressed for Disaster, the debut album by Moderately Alive" class="ma-album-cover" src="assets/artists/moderately-alive-dressed-for-disaster.webp" width="1254" height="1254" loading="lazy" decoding="async"/><div class="ma-album-copy"><p class="eyebrow" data-i18n="moderatelyAlbumLabel">DEBUT ALBUM</p><h3 class="condensed">DRESSED FOR DISASTER</h3><p data-i18n="moderatelyComing">COMING SOON // DATE TBA</p></div></div>
+<p style="margin:18px 0;font-weight:800"><a href="moderately-alive/en/" data-artist-profile="moderately-alive" data-i18n="auxBandProfile" style="color:#e5ee1f">ARTIST PAGE ↗</a></p><div class="ma-album"><img alt="Official cover of Dressed for Disaster, the debut album by Moderately Alive" class="ma-album-cover" src="assets/artists/moderately-alive-dressed-for-disaster.webp" width="1254" height="1254" loading="lazy" decoding="async"/><div class="ma-album-copy"><p class="eyebrow" data-i18n="moderatelyAlbumLabel">DEBUT ALBUM</p><h3 class="condensed">DRESSED FOR DISASTER</h3><p data-i18n="moderatelyComing">COMING SOON // DATE TBA</p></div></div>
 </div>
 <div class="band-panel" id="band-panel-auxkalo" data-band-panel="auxkalo" role="tabpanel" aria-labelledby="band-tab-auxkalo" tabindex="0" hidden>
 <h2 class="condensed roster-title roster-title--auxkalo" data-i18n-html="auxHeading">INDEPES, BAINA <em>JATORRAK.</em></h2>
@@ -596,6 +596,7 @@ img { height:auto; }
       if(Object.prototype.hasOwnProperty.call(strings,key))node.setAttribute('aria-label',strings[key]);
     });
     document.querySelectorAll('[data-auxkalo-localized]').forEach(link=>{link.setAttribute('href','auxkalo/'+code+'/')});
+    document.querySelectorAll('[data-artist-profile]').forEach(link=>{link.setAttribute('href',link.dataset.artistProfile+'/'+code+'/')});
     buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===code)));
     const meta=document.querySelector('meta[name="description"]');
     if(meta)meta.content={
