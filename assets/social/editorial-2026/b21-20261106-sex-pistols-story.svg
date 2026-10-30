@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs>
+  <pattern id="specks" patternUnits="userSpaceOnUse" width="47" height="59"><circle cx="3" cy="8" r="2" fill="#efe8d5" opacity=".17"/><path d="M23 48l13 -3M11 28l10 1" stroke="#efe8d5" stroke-width="2" opacity=".15"/></pattern>
+  <pattern id="stripes" patternUnits="userSpaceOnUse" width="22" height="22" patternTransform="rotate(-18)"><path d="M0 0h7" stroke="#f1ece1" stroke-width="9" opacity=".18"/></pattern>
+  <filter id="rough"><feTurbulence baseFrequency=".038" numOctaves="3" seed="16" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="5"/></filter>
+</defs>
+<rect width="1080" height="1920" fill="#161615"/><rect width="1080" height="1920" fill="url(#specks)"/>
+<path d="M-50 290L1140 100L1140 620L-50 750Z" fill="#e33029" filter="url(#rough)"/>
+<path d="M-80 950L1120 820L1120 980L-80 1110Z" fill="#e5ee1f" opacity=".98"/>
+<path d="M-40 1240L1140 1040L1140 1460L-40 1570Z" fill="url(#stripes)"/>
+<text x="73" y="130" font-family="Courier New,monospace" font-size="34" font-weight="bold" fill="#e5ee1f" letter-spacing="6">B21 // THIS DAY IN MUSIC</text>
+<text x="70" y="250" font-family="Impact,Arial Black,sans-serif" font-size="124" font-weight="bold" fill="#f1ece1" letter-spacing="2">06 NOV 1975</text>
+<text transform="translate(58 449) rotate(-6)" font-family="Impact,Arial Black,sans-serif" font-size="166" font-weight="bold" fill="#161615" letter-spacing="-3">SEX</text>
+<text transform="translate(59 605) rotate(-6)" font-family="Impact,Arial Black,sans-serif" font-size="176" font-weight="bold" fill="#161615" letter-spacing="-4">PISTOLS</text>
+<text x="73" y="815" font-family="Impact,Arial Black,sans-serif" font-size="78" font-weight="bold" fill="#f1ece1">FIRST EVER GIG.</text>
+<text x="76" y="913" font-family="Impact,Arial Black,sans-serif" font-size="69" font-weight="bold" fill="#161615">51 YEARS OF NOISE.</text>
+<g transform="translate(80 1120) rotate(-5)">
+<rect x="0" y="0" width="900" height="165" rx="0" fill="#f1ece1"/><text x="31" y="59" font-family="Courier New,monospace" font-size="40" font-weight="bold" fill="#161615">ST MARTIN'S SCHOOL OF ART</text><text x="32" y="120" font-family="Courier New,monospace" font-size="44" font-weight="bold" fill="#e33029">LONDON / UK</text>
+</g>
+<path d="M80 1390L960 1363" stroke="#e33029" stroke-width="9"/>
+<text x="75" y="1470" font-family="Impact,Arial Black,sans-serif" font-size="63" fill="#f1ece1">PRIMER CONCIERTO.</text>
+<text x="75" y="1546" font-family="Impact,Arial Black,sans-serif" font-size="55" fill="#e5ee1f">LEHEN KONTZERTUA.</text>
+<text x="76" y="1632" font-family="Courier New,monospace" font-size="29" font-weight="bold" fill="#f1ece1">06.11.1975 → 06.11.2026</text>
+<rect x="66" y="1705" width="948" height="3" fill="#585852"/>
+<text x="70" y="1795" font-family="Impact,Arial Black,sans-serif" font-size="64" fill="#f1ece1">BANNED <tspan fill="#e33029">21</tspan> RECORDS</text>
+<text x="74" y="1841" font-family="Courier New,monospace" font-size="24" fill="#afaaa1" letter-spacing="4">BAD IDEAS. LOUD MUSIC.</text>
+</svg>
