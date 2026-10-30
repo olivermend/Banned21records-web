@@ -1,19 +1,20 @@
 // Cloudflare Pages SEO: publish this host as canonical; keep GitHub Pages noindex.
 const SITE = "https://banned21records.pages.dev";
 const SOURCE = "https://olivermend.github.io/Banned21records-web";
-const PAGES = ["/", "/auxkalo/es/", "/auxkalo/eu/", "/auxkalo/en/"];
+const PAGES = ["/", "/auxkalo/es/", "/auxkalo/eu/", "/auxkalo/en/", "/something-numbers/es/", "/something-numbers/eu/", "/something-numbers/en/", "/moderately-alive/es/", "/moderately-alive/eu/", "/moderately-alive/en/"];
 
 function indexable(path) {
   return path === "/" || path === "/index.html" ||
-    /^\/auxkalo\/(?:es|eu|en)\/(?:index\.html)?$/.test(path);
+    /^\/(?:auxkalo|something-numbers|moderately-alive)\/(?:es|eu|en)\/(?:index\.html)?$/.test(path);
 }
 
 function sitemapXml() {
   const links = PAGES.map((path) => {
-    const alternatives = path.startsWith("/auxkalo/")
+    const family = path.match(/^\/(auxkalo|something-numbers|moderately-alive)\/(es|eu|en)\/$/);
+    const alternatives = family
       ? ["es", "eu", "en"].map((lang) =>
           '    <xhtml:link rel="alternate" hreflang="' + lang +
-          '" href="' + SITE + "/auxkalo/" + lang + '/"/>'
+          '" href="' + SITE + "/" + family[1] + "/" + lang + '/"/>'
         ).join("\n")
       : "";
     return "  <url>\n    <loc>" + SITE + path + "</loc>\n" +
