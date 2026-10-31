@@ -1,4 +1,4 @@
-name: B21 November editorial assets
+name: B21 November editorial art v2
 on:
   push:
     paths:
@@ -16,16 +16,31 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install image dependencies
-        run: python -m pip install --disable-pip-version-check pillow==11.3.0 numpy==2.3.3
-      - name: Render five B21 November editorial posts
-        run: python operations/generate-b21-nov-editorial.py
-      - name: Publish JPEGs to B21 Cloudflare site
+      - name: Install rendering dependencies
+        run: python -m pip install --disable-pip-version-check pillow==11.3.0
+      - name: Render archival editorial photography and typesetting
+        run: python operations/generate-b21-nov-editorial-v2.py
+      - name: Verify all 17 output images
+        run: |
+          python - <<'PY'
+          from PIL import Image
+          from pathlib import Path
+          d=Path("assets/social/editorial-2026/b21-nov-2026-v2")
+          pics=list(d.glob("*.jpg"))
+          assert len(pics)==17, len(pics)
+          for p in pics:
+              im=Image.open(p)
+              assert im.width==1080
+              assert im.height in (1350,1920)
+              im.verify()
+          print("QA PASS:",len(pics),"JPG files")
+          PY
+      - name: Publish artwork to Cloudflare source repository
         run: |
           git config user.name "b21-editorial-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add assets/social/editorial-2026/b21-nov-2026
+          git add assets/social/editorial-2026/b21-nov-2026-v2
           if ! git diff --cached --quiet; then
-            git commit -m "Publish November 2026 B21 social artwork"
+            git commit -m "Publish B21 archival editorial November 2026 assets"
             git push
           fi
