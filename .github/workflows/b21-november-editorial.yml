@@ -1,14 +1,63 @@
-name: B21 November editorial art v2
+name: B21 November editorial archival collage v2
 on:
   push:
     paths:
       - '.github/workflows/b21-november-editorial.yml'
-      - 'operations/generate-b21-nov-editorial-v2.py'
   workflow_dispatch:
 permissions:
   contents: write
 jobs:
-  render-and-publish:
+  fetch-archive:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - slug: sex
+            file: 1/1e/Sex_Pistols_in_Paradiso.jpg
+          - slug: madonna
+            file: 5/53/MadonnaVirginTour.jpg
+          - slug: duran
+            file: f/f6/Duran_Duran.jpg
+          - slug: freddie
+            file: 0/02/Queen_-_Freddie_Mercury.jpg
+          - slug: human
+            file: 6/67/Philip_Oakey_2014.jpg
+    steps:
+      - name: Download one CC-licensed archive photo on separate runner
+        env:
+          SLUG: ${{ matrix.slug }}
+          SOURCE_FILE: ${{ matrix.file }}
+        run: |
+          python - <<'PY'
+          import os, urllib.request, urllib.error, time
+          slug=os.environ['SLUG']
+          source=os.environ['SOURCE_FILE']
+          url='https://upload.wikimedia.org/wikipedia/commons/'+source
+          os.makedirs('source-cache',exist_ok=True)
+          for attempt in range(6):
+              try:
+                  req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0'})
+                  with urllib.request.urlopen(req,timeout=45) as r:
+                      data=r.read()
+                  assert len(data)>5000 and data[:2]==b'\xff\xd8', 'Not a valid JPEG'
+                  dest='source-cache/'+slug+'.jpg'
+                  with open(dest,'wb') as f:f.write(data)
+                  print('Downloaded',slug,len(data),'bytes')
+                  break
+              except Exception as exc:
+                  print('Retry',slug,attempt,type(exc).__name__,str(exc)[:120],flush=True)
+                  if attempt==5:raise
+                  time.sleep(10+10*attempt)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: archive-photo-${{ matrix.slug }}
+          path: source-cache/${{ matrix.slug }}.jpg
+          retention-days: 1
+
+  build-and-publish:
+    needs: fetch-archive
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,31 +66,38 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install rendering dependencies
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: archive-photo-*
+          path: /tmp/b21-nov26-src
+          merge-multiple: true
+      - name: Install Pillow
         run: python -m pip install --disable-pip-version-check pillow==11.3.0
-      - name: Render archival editorial photography and typesetting
+      - name: Render 17 editorial images
+        env:
+          B21_CACHE_DIR: /tmp/b21-nov26-src
         run: python operations/generate-b21-nov-editorial-v2.py
-      - name: Verify all 17 output images
+      - name: Verify dimensions and valid JPEGs
         run: |
           python - <<'PY'
           from PIL import Image
           from pathlib import Path
-          d=Path("assets/social/editorial-2026/b21-nov-2026-v2")
-          pics=list(d.glob("*.jpg"))
-          assert len(pics)==17, len(pics)
-          for p in pics:
+          d=Path('assets/social/editorial-2026/b21-nov-2026-v2')
+          files=sorted(d.glob('*.jpg'))
+          assert len(files)==17, len(files)
+          for p in files:
               im=Image.open(p)
-              assert im.width==1080
-              assert im.height in (1350,1920)
+              assert (im.width,im.height) in [(1080,1350),(1080,1920)], (p.name,im.size)
               im.verify()
-          print("QA PASS:",len(pics),"JPG files")
+          print('QA PASS:',len(files),'JPEG assets')
           PY
-      - name: Publish artwork to Cloudflare source repository
+      - name: Commit verified assets and deploy
         run: |
           git config user.name "b21-editorial-bot"
           git config user.email "actions@users.noreply.github.com"
           git add assets/social/editorial-2026/b21-nov-2026-v2
           if ! git diff --cached --quiet; then
-            git commit -m "Publish B21 archival editorial November 2026 assets"
-            git push
+            git commit -m "Publish verified archival B21 November editorial images"
+            git pull --rebase origin main
+            git push origin main
           fi
