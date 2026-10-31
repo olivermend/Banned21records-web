@@ -1,0 +1,49 @@
+{
+  "files": [
+    "MADONNA_01.jpg",
+    "MADONNA_02.jpg",
+    "MADONNA_03.jpg",
+    "MADONNA_04.jpg",
+    "MADONNA_05.jpg",
+    "DURAN_01.jpg",
+    "DURAN_02.jpg",
+    "DURAN_03.jpg",
+    "DURAN_04.jpg",
+    "DURAN_05.jpg",
+    "FREDDIE_01.jpg",
+    "FREDDIE_02.jpg",
+    "FREDDIE_03.jpg",
+    "FREDDIE_04.jpg",
+    "FREDDIE_05.jpg",
+    "SEXPISTOLS_STORY.jpg",
+    "HUMANLEAGUE_STORY.jpg"
+  ],
+  "photo_sources": {
+    "sex": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Sex_Pistols_in_Paradiso.jpg",
+      "credit_and_license": "Koen Suyk / Nationaal Archief; CC0; photo Jan 1977",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Sex_Pistols_in_Paradiso.jpg"
+    },
+    "madonna": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/MadonnaVirginTour.jpg",
+      "credit_and_license": "Bill Lanphier; CC BY 3.0; photo 1985",
+      "source_page": "https://commons.wikimedia.org/wiki/File:MadonnaVirginTour.jpg"
+    },
+    "duran": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Duran_Duran.jpg",
+      "credit_and_license": "Samira Khan; CC BY 2.0; Toronto concert, 5 April 2005",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Duran_Duran.jpg"
+    },
+    "freddie": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Queen_-_Freddie_Mercury.jpg",
+      "credit_and_license": "Carl Lender; CC BY 2.0; photo Nov 1977",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Queen_-_Freddie_Mercury.jpg"
+    },
+    "human": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Philip_Oakey_2014.jpg",
+      "credit_and_license": "Jeffrey Pardoen; CC BY 2.0; Philip Oakey of The Human League, 11 July 2014",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Philip_Oakey_2014.jpg"
+    }
+  },
+  "archive_photo_dates_do_not_match_historical_anniversary_dates": true
+}
