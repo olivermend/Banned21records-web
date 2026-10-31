@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '.github/workflows/b21-november-editorial.yml'
+      - 'operations/generate-b21-nov-editorial-v2.py'
   workflow_dispatch:
 permissions:
   contents: write
