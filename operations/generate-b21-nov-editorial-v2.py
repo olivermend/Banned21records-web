@@ -22,16 +22,16 @@ for name in ['HEAD','NARROW']:
  if not os.path.exists(globals()[name]):globals()[name]='/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Bold.ttf'
 
 SOURCES={
- 'sex':('https://upload.wikimedia.org/wikipedia/commons/1/1e/Sex_Pistols_in_Paradiso.jpg',
+ 'sex':('https://commons.wikimedia.org/wiki/Special:Redirect/file/Sex_Pistols_in_Paradiso.jpg',
          'Koen Suyk / Nationaal Archief; CC0; photo Jan 1977','https://commons.wikimedia.org/wiki/File:Sex_Pistols_in_Paradiso.jpg'),
- 'madonna':('https://upload.wikimedia.org/wikipedia/commons/5/53/MadonnaVirginTour.jpg',
+ 'madonna':('https://commons.wikimedia.org/wiki/Special:Redirect/file/MadonnaVirginTour.jpg',
          'Bill Lanphier; CC BY 3.0; photo 1985','https://commons.wikimedia.org/wiki/File:MadonnaVirginTour.jpg'),
- 'duran':('https://upload.wikimedia.org/wikipedia/commons/e/e8/Duran_Duran_1983.jpg',
-         'Brian Aris / Capitol Records; archival publicity image 1983','https://commons.wikimedia.org/wiki/File:Duran_Duran_1983.jpg'),
- 'freddie':('https://upload.wikimedia.org/wikipedia/commons/0/02/Queen_-_Freddie_Mercury.jpg',
+ 'duran':('https://commons.wikimedia.org/wiki/Special:Redirect/file/Duran_Duran_Bogota_2008.jpg',
+         'Luz Adriana Villa; CC BY 2.0; 12 November 2008 concert photo','https://commons.wikimedia.org/wiki/File:Duran_Duran_Bogota_2008.jpg'),
+ 'freddie':('https://commons.wikimedia.org/wiki/Special:Redirect/file/Queen_-_Freddie_Mercury.jpg',
          'Carl Lender; CC BY 2.0; photo Nov 1977','https://commons.wikimedia.org/wiki/File:Queen_-_Freddie_Mercury.jpg'),
- 'human':('https://upload.wikimedia.org/wikipedia/commons/8/88/The_Human_League.jpg',
-         'Alberto Garcia; CC BY-SA 2.0; photo Aug 2011','https://commons.wikimedia.org/wiki/File:The_Human_League.jpg')
+ 'human':('https://commons.wikimedia.org/wiki/Special:Redirect/file/Philip_Oakey_2014.jpg',
+         'Jeffrey Pardoen; CC BY 2.0; Philip Oakey of The Human League, 11 July 2014','https://commons.wikimedia.org/wiki/File:Philip_Oakey_2014.jpg')
 }
 LOCAL={
  'sex':'/mnt/data/a_gritty_punk_rock_concert_collage_scene_high_con.png',
@@ -207,8 +207,13 @@ def scene(slug,idx,photo,title,lines,chip,detail,accent,seed):
   txt(d,72,185,chip,32,CREAM,MONO,maxw=900)
  d=ImageDraw.Draw(im)
  # archival date tag prevents misleading that 1977 photo depicts an earlier historical show
- tag={'madonna':'ARCHIVE PHOTO / 1985','duran':'ARCHIVE PHOTO / 1983','freddie':'ARCHIVE PHOTO / 1977'}[slug]
+ tag={'madonna':'ARCHIVE PHOTO / 1985','duran':'ARCHIVE PHOTO / 2008','freddie':'ARCHIVE PHOTO / 1977'}[slug]
  by=1235 if idx==5 else 1203
+ if slug=='madonna':credit='PHOTO: BILL LANPHIER · CC BY 3.0 (EDITED)'
+ elif slug=='duran':credit='PHOTO: L. A. VILLA · CC BY 2.0 (EDITED)'
+ else:credit='PHOTO: CARL LENDER · CC BY 2.0 (EDITED)'
+ d.rounded_rectangle((395,by,1020,by+30),3,fill=INK)
+ txt(d,403,by+2,credit,16,CREAM,MONO,maxw=610)
  d.rounded_rectangle((66,by,390,by+30),3,fill=INK)
  txt(d,76,by+2,tag,19,CREAM,MONO,maxw=300)
  header(im,slug,idx,light=light)
@@ -263,6 +268,8 @@ def story(slug,title,date,lines,sub,accent,seed):
  else:
   labels=['THE UNLIKELY HIT.','EL ÉXITO IMPROBABLE.','USTEKABEKO ARRAKASTA.']
  for j,line in enumerate(labels):txt(dd,76,1530+j*78,line,45-j*4,INK,HEAD,maxw=906)
+ source_note=('PHOTO: K. SUYK · CC0 · 1977' if slug=='sex' else 'PHOTO: J. PARDOEN · CC BY 2.0 (EDITED) · 2014')
+ txt(dd,75,1785,source_note,20,INK,MONO,maxw=900)
  dd.rectangle((65,1830,1014,1836),fill=RED)
  txt(dd,69,1848,'BANNED',42,CREAM,HEAD);txt(dd,300,1844,'21',52,RED,HEAD);txt(dd,386,1848,'RECORDS',42,CREAM,HEAD)
  return im
