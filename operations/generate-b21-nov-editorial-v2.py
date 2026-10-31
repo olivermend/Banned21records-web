@@ -43,18 +43,34 @@ LOCAL={
 
 def load_images():
  ret={}
+ import urllib.parse,time
  for name,(url,credit,attribution) in SOURCES.items():
   if PREVIEW:
    ret[name]=Image.open(LOCAL[name]).convert('RGB');continue
   dest=SRC/(name+'.jpg')
   if not dest.exists():
-   req=urllib.request.Request(url,headers={'User-Agent':'B21RecordsEditorial/1.0 (heritage visual research; Wikimedia Commons)'})
-   with urllib.request.urlopen(req,timeout=35) as response:data=response.read()
-   if len(data)<5000:raise RuntimeError('Downloaded image too small for '+name)
-   test=Image.open(io.BytesIO(data));test.verify()
-   dest.write_bytes(data)
+   origin=url.removeprefix('https://')
+   file_uri=url.rsplit('/',1)[-1]
+   candidates=[url,
+      'https://wsrv.nl/?url='+urllib.parse.quote(origin,safe=''),
+      'https://images.weserv.nl/?url='+urllib.parse.quote(origin,safe=''),
+      'https://commons.wikimedia.org/wiki/Special:FilePath/'+file_uri]
+   errors=[]
+   for candidate in candidates:
+    try:
+     req=urllib.request.Request(candidate,headers={'User-Agent':'Mozilla/5.0 (B21EditorialBot/1.0)','Accept':'image/jpeg,image/*;q=0.9,*/*;q=0.6'})
+     with urllib.request.urlopen(req,timeout=30) as response:data=response.read()
+     if len(data)<5000:raise RuntimeError('too small: '+str(len(data)))
+     test=Image.open(io.BytesIO(data));test.verify()
+     dest.write_bytes(data)
+     print('Downloaded',name,len(data),'bytes via',candidate.split('/')[2],flush=True)
+     break
+    except Exception as err:
+     errors.append(str(err)[:190]);time.sleep(.5)
+   if not dest.exists():raise RuntimeError('Could not download '+name+': '+str(errors))
   ret[name]=Image.open(dest).convert('RGB')
  return ret
+
 PHOTOS=load_images()
 
 def font(size,face=HEAD):return ImageFont.truetype(face,int(size))
