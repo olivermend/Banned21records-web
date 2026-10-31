@@ -22,15 +22,15 @@ for name in ['HEAD','NARROW']:
  if not os.path.exists(globals()[name]):globals()[name]='/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Bold.ttf'
 
 SOURCES={
- 'sex':('https://commons.wikimedia.org/wiki/Special:Redirect/file/Sex_Pistols_in_Paradiso.jpg',
+ 'sex':('https://upload.wikimedia.org/wikipedia/commons/1/1e/Sex_Pistols_in_Paradiso.jpg',
          'Koen Suyk / Nationaal Archief; CC0; photo Jan 1977','https://commons.wikimedia.org/wiki/File:Sex_Pistols_in_Paradiso.jpg'),
- 'madonna':('https://commons.wikimedia.org/wiki/Special:Redirect/file/MadonnaVirginTour.jpg',
+ 'madonna':('https://upload.wikimedia.org/wikipedia/commons/5/53/MadonnaVirginTour.jpg',
          'Bill Lanphier; CC BY 3.0; photo 1985','https://commons.wikimedia.org/wiki/File:MadonnaVirginTour.jpg'),
- 'duran':('https://commons.wikimedia.org/wiki/Special:Redirect/file/Duran_Duran_Bogota_2008.jpg',
-         'Luz Adriana Villa; CC BY 2.0; 12 November 2008 concert photo','https://commons.wikimedia.org/wiki/File:Duran_Duran_Bogota_2008.jpg'),
- 'freddie':('https://commons.wikimedia.org/wiki/Special:Redirect/file/Queen_-_Freddie_Mercury.jpg',
+ 'duran':('https://upload.wikimedia.org/wikipedia/commons/f/f6/Duran_Duran.jpg',
+         'Samira Khan; CC BY 2.0; Toronto concert, 5 April 2005','https://commons.wikimedia.org/wiki/File:Duran_Duran.jpg'),
+ 'freddie':('https://upload.wikimedia.org/wikipedia/commons/0/02/Queen_-_Freddie_Mercury.jpg',
          'Carl Lender; CC BY 2.0; photo Nov 1977','https://commons.wikimedia.org/wiki/File:Queen_-_Freddie_Mercury.jpg'),
- 'human':('https://commons.wikimedia.org/wiki/Special:Redirect/file/Philip_Oakey_2014.jpg',
+ 'human':('https://upload.wikimedia.org/wikipedia/commons/6/67/Philip_Oakey_2014.jpg',
          'Jeffrey Pardoen; CC BY 2.0; Philip Oakey of The Human League, 11 July 2014','https://commons.wikimedia.org/wiki/File:Philip_Oakey_2014.jpg')
 }
 LOCAL={
@@ -51,10 +51,15 @@ def load_images():
   if not dest.exists():
    origin=url.removeprefix('https://')
    file_uri=url.rsplit('/',1)[-1]
-   candidates=[url,
-      'https://wsrv.nl/?url='+urllib.parse.quote(origin,safe=''),
-      'https://images.weserv.nl/?url='+urllib.parse.quote(origin,safe=''),
-      'https://commons.wikimedia.org/wiki/Special:FilePath/'+file_uri]
+   candidates=[
+       url,
+       'https://wsrv.nl/?url='+urllib.parse.quote(origin,safe=''),
+       'https://wsrv.nl/?url='+urllib.parse.quote(url,safe=''),
+       'https://images.weserv.nl/?url='+urllib.parse.quote(origin,safe=''),
+       'https://images.weserv.nl/?url='+urllib.parse.quote(url,safe=''),
+       'https://commons.wikimedia.org/wiki/Special:Redirect/file/'+file_uri,
+       'https://commons.wikimedia.org/wiki/Special:FilePath/'+file_uri]
+
    errors=[]
    for candidate in candidates:
     try:
@@ -223,10 +228,10 @@ def scene(slug,idx,photo,title,lines,chip,detail,accent,seed):
   txt(d,72,185,chip,32,CREAM,MONO,maxw=900)
  d=ImageDraw.Draw(im)
  # archival date tag prevents misleading that 1977 photo depicts an earlier historical show
- tag={'madonna':'ARCHIVE PHOTO / 1985','duran':'ARCHIVE PHOTO / 2008','freddie':'ARCHIVE PHOTO / 1977'}[slug]
+ tag={'madonna':'ARCHIVE PHOTO / 1985','duran':'ARCHIVE PHOTO / 2005','freddie':'ARCHIVE PHOTO / 1977'}[slug]
  by=1235 if idx==5 else 1203
  if slug=='madonna':credit='PHOTO: BILL LANPHIER · CC BY 3.0 (EDITED)'
- elif slug=='duran':credit='PHOTO: L. A. VILLA · CC BY 2.0 (EDITED)'
+ elif slug=='duran':credit='PHOTO: SAMIRA KHAN · CC BY 2.0 (EDITED)'
  else:credit='PHOTO: CARL LENDER · CC BY 2.0 (EDITED)'
  d.rounded_rectangle((395,by,1020,by+30),3,fill=INK)
  txt(d,403,by+2,credit,16,CREAM,MONO,maxw=610)
