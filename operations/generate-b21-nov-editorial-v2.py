@@ -63,7 +63,7 @@ def load_images():
    errors=[]
    for candidate in candidates:
     try:
-     req=urllib.request.Request(candidate,headers={'User-Agent':'Mozilla/5.0 (B21EditorialBot/1.0)','Accept':'image/jpeg,image/*;q=0.9,*/*;q=0.6'})
+     req=urllib.request.Request(candidate,headers={'User-Agent':'Mozilla/5.0','Accept':'image/jpeg,image/*;q=0.9,*/*;q=0.6'})
      with urllib.request.urlopen(req,timeout=30) as response:data=response.read()
      if len(data)<5000:raise RuntimeError('too small: '+str(len(data)))
      test=Image.open(io.BytesIO(data));test.verify()
