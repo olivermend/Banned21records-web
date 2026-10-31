@@ -61,17 +61,32 @@ def load_images():
        'https://commons.wikimedia.org/wiki/Special:FilePath/'+file_uri]
 
    errors=[]
+   import urllib.error
    for candidate in candidates:
-    try:
-     req=urllib.request.Request(candidate,headers={'User-Agent':'Mozilla/5.0','Accept':'image/jpeg,image/*;q=0.9,*/*;q=0.6'})
-     with urllib.request.urlopen(req,timeout=30) as response:data=response.read()
-     if len(data)<5000:raise RuntimeError('too small: '+str(len(data)))
-     test=Image.open(io.BytesIO(data));test.verify()
-     dest.write_bytes(data)
-     print('Downloaded',name,len(data),'bytes via',candidate.split('/')[2],flush=True)
-     break
-    except Exception as err:
-     errors.append(str(err)[:190]);time.sleep(.5)
+    attempts=5 if candidate==url else 1
+    for attempt in range(attempts):
+     try:
+      req=urllib.request.Request(candidate,headers={'User-Agent':'Mozilla/5.0','Accept':'image/jpeg,image/*;q=0.9,*/*;q=0.6'})
+      with urllib.request.urlopen(req,timeout=40) as response:data=response.read()
+      if len(data)<5000:raise RuntimeError('too small: '+str(len(data)))
+      test=Image.open(io.BytesIO(data));test.verify()
+      dest.write_bytes(data)
+      print('Downloaded',name,len(data),'bytes via',candidate.split('/')[2],flush=True)
+      time.sleep(8)
+      break
+     except urllib.error.HTTPError as err:
+      errors.append(str(err)[:120])
+      if err.code==429 and candidate==url and attempt<attempts-1:
+       delay=12*(attempt+1)
+       print('Wikimedia rate limit for',name,'retry',attempt+1,'after cooldown',delay,flush=True)
+       time.sleep(delay)
+      else:
+       time.sleep(1)
+     except Exception as err:
+      errors.append(str(err)[:190])
+      time.sleep(1)
+    if dest.exists():break
+
    if not dest.exists():raise RuntimeError('Could not download '+name+': '+str(errors))
   ret[name]=Image.open(dest).convert('RGB')
  return ret
