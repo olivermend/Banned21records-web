@@ -1,0 +1,135 @@
+{
+  "files": [
+    {
+      "name": "MADONNA_01.jpg",
+      "w": 1080,
+      "h": 1350,
+      "bytes": 529702
+    },
+    {
+      "name": "MADONNA_02.jpg",
+      "w": 1080,
+      "h": 1350,
+      "bytes": 442408
+    },
+    {
+      "name": "MADONNA_03.jpg",
+      "w": 1080,
+      "h": 1350,
+      "bytes": 539124
+    },
+    {
+      "name": "MADONNA_04.jpg",
+      "w": 1080,
+      "h": 1350,
+      "bytes": 455807
+    },
+    {
+      "name": "MADONNA_05.jpg",
+      "w": 1080,
+      "h": 1350,
+      "bytes": 401983
+    },
+    {
+      "name": "DURAN_01.jpg",
+      "w": 1080,
+      "h": 1350,
+      "bytes": 619100
+    },
+    {
+      "name": "DURAN_02.jpg",
+      "w": 1080,
+      "h": 1350,
+      "bytes": 603291
+    },
+    {
+      "name": "DURAN_03.jpg",
+      "w": 1080,
+      "h": 1350,
+      "bytes": 362846
+    },
+    {
+      "name": "DURAN_04.jpg",
+      "w": 1080,
+      "h": 1350,
+      "bytes": 618791
+    },
+    {
+      "name": "DURAN_05.jpg",
+      "w": 1080,
+      "h": 1350,
+      "bytes": 488915
+    },
+    {
+      "name": "FREDDIE_01.jpg",
+      "w": 1080,
+      "h": 1350,
+      "bytes": 536996
+    },
+    {
+      "name": "FREDDIE_02.jpg",
+      "w": 1080,
+      "h": 1350,
+      "bytes": 579226
+    },
+    {
+      "name": "FREDDIE_03.jpg",
+      "w": 1080,
+      "h": 1350,
+      "bytes": 495617
+    },
+    {
+      "name": "FREDDIE_04.jpg",
+      "w": 1080,
+      "h": 1350,
+      "bytes": 465789
+    },
+    {
+      "name": "FREDDIE_05.jpg",
+      "w": 1080,
+      "h": 1350,
+      "bytes": 426369
+    },
+    {
+      "name": "SEXPISTOLS_STORY.jpg",
+      "w": 1080,
+      "h": 1920,
+      "bytes": 708737
+    },
+    {
+      "name": "HUMANLEAGUE_STORY.jpg",
+      "w": 1080,
+      "h": 1920,
+      "bytes": 704854
+    }
+  ],
+  "meta": {
+    "MADONNA": [
+      "12 NOVEMBER 1984",
+      "LIKE A VIRGIN"
+    ],
+    "DURAN": [
+      "21 NOVEMBER 1983",
+      "SEVEN AND THE RAGGED TIGER"
+    ],
+    "FREDDIE": [
+      "24 NOVEMBER 1991",
+      "FREDDIE MERCURY"
+    ],
+    "SEXPISTOLS": [
+      "6 NOVEMBER 1975",
+      "SEX PISTOLS FIRST GIG"
+    ],
+    "HUMANLEAGUE": [
+      "27 NOVEMBER 1981",
+      "DON'T YOU WANT ME"
+    ]
+  },
+  "credits": {
+    "sex": "PHOTO: KOEN SUYK \u00b7 CC0 \u00b7 1977",
+    "madonna": "PHOTO: BILL LANPHIER \u00b7 CC BY 3.0 \u00b7 1985",
+    "duran": "PHOTO: SAMIRA KHAN \u00b7 CC BY 2.0 \u00b7 2005",
+    "freddie": "PHOTO: CARL LENDER \u00b7 CC BY 2.0 \u00b7 1977",
+    "human": "PHOTO: J. PARDOEN \u00b7 CC BY 2.0 \u00b7 2014"
+  }
+}
