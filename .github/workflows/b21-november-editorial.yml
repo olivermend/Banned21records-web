@@ -1,8 +1,9 @@
-name: B21 November editorial archival collage v2
+name: B21 November editorial 17 individual images
 on:
   push:
     paths:
       - '.github/workflows/b21-november-editorial.yml'
+      - 'operations/generate-b21-nov-editorial-v3.py'
   workflow_dispatch:
 permissions:
   contents: write
@@ -72,17 +73,18 @@ jobs:
           path: /tmp/b21-nov26-src
           merge-multiple: true
       - name: Install Pillow
-        run: python -m pip install --disable-pip-version-check pillow==11.3.0
+        run: python -m pip install --disable-pip-version-check pillow==11.3.0 numpy==2.3.3
       - name: Render 17 editorial images
         env:
           B21_CACHE_DIR: /tmp/b21-nov26-src
-        run: python operations/generate-b21-nov-editorial-v2.py
+          B21_OUTPUT: assets/social/editorial-2026/b21-nov-2026-v3
+        run: python operations/generate-b21-nov-editorial-v3.py
       - name: Verify dimensions and valid JPEGs
         run: |
           python - <<'PY'
           from PIL import Image
           from pathlib import Path
-          d=Path('assets/social/editorial-2026/b21-nov-2026-v2')
+          d=Path('assets/social/editorial-2026/b21-nov-2026-v3')
           files=sorted(d.glob('*.jpg'))
           assert len(files)==17, len(files)
           for p in files:
@@ -95,9 +97,9 @@ jobs:
         run: |
           git config user.name "b21-editorial-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add assets/social/editorial-2026/b21-nov-2026-v2
+          git add assets/social/editorial-2026/b21-nov-2026-v3
           if ! git diff --cached --quiet; then
-            git commit -m "Publish verified archival B21 November editorial images"
+            git commit -m "Publish B21 November individual editorial carousel slides"
             git pull --rebase origin main
             git push origin main
           fi
