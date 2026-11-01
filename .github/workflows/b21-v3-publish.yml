@@ -90,5 +90,6 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add assets/social/editorial-2026/b21-nov-2026-v3
           git commit -m "Publish separate B21 November social artwork"
+          git restore operations/generate-b21-nov-editorial-v3.py
           git pull --rebase origin main
           git push origin main
