@@ -72,8 +72,11 @@ jobs:
           pattern: archive-photo-*
           path: /tmp/b21-nov26-src
           merge-multiple: true
-      - name: Install Pillow
-        run: python -m pip install --disable-pip-version-check pillow==11.3.0 numpy==2.3.3
+      - name: Install fonts and Pillow
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-core fonts-dejavu-core
+          python -m pip install --disable-pip-version-check pillow==11.3.0 numpy==2.3.3
       - name: Render 17 editorial images
         env:
           B21_CACHE_DIR: /tmp/b21-nov26-src
